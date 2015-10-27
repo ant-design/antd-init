@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var vfs = require('vinyl-fs');
+var fs = require('fs');
+var through = require('through2');
+var path = require('path');
+var join = path.join;
+var basename = path.basename;
+
+var cwd = join(__dirname, '../boilerplate');
+var dest = process.cwd();
+
+vfs.src('**/*', {cwd: cwd, cwdbase: true, dot: true})
+  .pipe(template(dest))
+  .pipe(vfs.dest(dest))
+  .on('end', function() {
+    fs.renameSync(path.join(dest,'gitignore'),path.join(dest,'.gitignore'))
+  })
+  .resume();
+
+function template(dest) {
+  return through.obj(function (file, enc, cb) {
+    if (!file.stat.isFile()) {
+      return cb();
+    }
+
+    console.log('Write %s', simplifyFilename(join(dest, basename(file.path))));
+    this.push(file);
+    cb();
+  });
+}
+
+function simplifyFilename(filename) {
+  return filename.replace(process.cwd(), ".");
+}

@@ -1,0 +1,19 @@
+{
+  "name": "antd-init",
+  "version": "0.1.0",
+  "description": "Ant Design boilerplate generator.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant-design/antd-init"
+  },
+  "homepage": "https://github.com/ant-design/antd-init",
+  "mai": "chencheng <sorrycc@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "antd-init": "./bin/antd-init"
+  },
+  "dependencies": {
+    "through2": "~2.0.0",
+    "vinyl-fs": "~2.2.1"
+  }
+}
