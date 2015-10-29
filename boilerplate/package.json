@@ -6,16 +6,16 @@
   },
   "dependencies": {
     "antd": "0.x",
-    "antd-build": "0.3.x",
+    "antd-build": "0.4.x",
     "react": "~0.14.0",
     "react-dom": "~0.14.0"
   },
   "devDependencies": {
-    "antd-bin": "0.9.x",
+    "antd-bin": "0.10.x",
     "babel-eslint": "~4.0.5",
-    "eslint": "~1.1.0",
-    "eslint-config-airbnb": "0.0.7",
-    "eslint-plugin-react": "~3.2.1",
+    "eslint": "~1.6.0",
+    "eslint-config-airbnb": "~0.1.0",
+    "eslint-plugin-react": "~3.5.1",
     "precommit-hook": "1.x"
   },
   "precommit": [
