@@ -5,10 +5,9 @@
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd": "0.x",
+    "antd": "0.9.x",
     "antd-build": "0.4.x",
-    "react": "~0.14.0",
-    "react-dom": "~0.14.0"
+    "react": "~0.13.0"
   },
   "devDependencies": {
     "antd-bin": "0.10.x",
@@ -16,9 +15,9 @@
     "eslint": "~1.6.0",
     "eslint-config-airbnb": "~0.1.0",
     "eslint-plugin-react": "~3.5.1",
-    "precommit-hook": "1.x"
+    "pre-commit": "1.x"
   },
-  "precommit": [
+  "pre-commit": [
     "lint"
   ],
   "scripts": {

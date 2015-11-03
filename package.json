@@ -1,6 +1,6 @@
 {
   "name": "antd-init",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Ant Design boilerplate generator.",
   "repository": {
     "type": "git",
@@ -11,6 +11,9 @@
   "license": "MIT",
   "bin": {
     "antd-init": "./bin/antd-init"
+  },
+  "scripts": {
+    "publish": "git push origin"
   },
   "dependencies": {
     "through2": "~2.0.0",
