@@ -1,16 +1,16 @@
 # antd-demo
 
-## 基本依赖
+## Environment
 
 ```
 node >= 0.12
 ```
 
-## 代码规范
+## Code Style
 
 https://github.com/airbnb/javascript
 
-## 开发
+## Develop
 
 ```
 npm install -g tnpm --registry=http://registry.npm.alibaba-inc.com
@@ -20,7 +20,7 @@ npm run dev
 
 访问 http://127.0.0.1:8000 
 
-## 构建
+## Build
 
 ```
 npm run build
