@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "through2": "~2.0.0",
-    "vinyl-fs": "~2.2.1"
+    "vinyl-fs": "~2.2.1",
+    "which": "~1.2.0"
   }
 }
