@@ -6,13 +6,13 @@
 
 ----
 
-## 安装
+## Install
 
 ```bash
 $ npm i antd-init --save
 ```
 
-## 使用
+## Usage
 
 ```bash
 $ mkdir foo && cd foo
