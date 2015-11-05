@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "antd server --port 9876",
+    "dev": "antd server --port 8001",
     "test": "antd test",
     "lint": "eslint --ext .js,.jsx src",
     "build": "rm -rf dist && antd-build && mkdir -p dist/${npm_package_name}/${npm_package_version} && mv dist/*.* dist/${npm_package_name}/${npm_package_version}/"
