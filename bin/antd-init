@@ -7,6 +7,12 @@ var path = require('path');
 var join = path.join;
 var basename = path.basename;
 
+if (process.argv.length === 3 &&
+  (process.argv[2] === '-v' || process.argv[2] === '--version')) {
+  console.log(require('../package').version);
+  return;
+}
+
 var cwd = join(__dirname, '../boilerplate');
 var dest = process.cwd();
 
