@@ -13,7 +13,7 @@
     "antd-init": "./bin/antd-init"
   },
   "scripts": {
-    "publish": "git push origin --tags"
+    "publish": "git push origin master --tags"
   },
   "dependencies": {
     "through2": "~2.0.0",
