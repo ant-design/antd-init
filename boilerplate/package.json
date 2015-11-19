@@ -5,9 +5,10 @@
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd": "0.9.x",
+    "antd": "0.10.x",
     "antd-build": "0.4.x",
-    "react": "~0.13.0"
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3"
   },
   "devDependencies": {
     "antd-bin": "0.10.x",
