@@ -7,6 +7,7 @@
   "dependencies": {
     "antd": "0.10.x",
     "antd-build": "0.4.x",
+    "less": "2.x",
     "react": "~0.14.3",
     "react-dom": "~0.14.3"
   },
