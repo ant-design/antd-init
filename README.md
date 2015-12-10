@@ -9,12 +9,26 @@
 ## Install
 
 ```bash
-$ npm i antd-init --save
+$ npm i antd-init -g
 ```
 
 ## Usage
 
+Generate biolerplate.
+
 ```bash
 $ mkdir foo && cd foo
 $ antd-init
+```
+
+Start development server.
+
+```bash
+$ npm run dev
+```
+
+Build.
+
+```bash
+$ npm run build
 ```
