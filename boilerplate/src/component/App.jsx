@@ -3,7 +3,9 @@ import { Datepicker } from 'antd';
 
 const App = React.createClass({
   render() {
-    return <Datepicker />;
+    return <div>
+      <Datepicker />
+    </div>;
   },
 });
 

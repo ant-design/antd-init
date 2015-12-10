@@ -6,16 +6,17 @@
   },
   "dependencies": {
     "antd": "0.10.x",
-    "atool-build": "0.1.x",
+    "atool-build": "0.3.x",
     "babel-plugin-antd": "^0.1.2",
     "react": "~0.14.3",
     "react-dom": "~0.14.3"
   },
   "devDependencies": {
     "babel-eslint": "~4.0.5",
-    "dora": "0.1.0-beta5",
-    "dora-plugin-atool-build": "^0.1.1",
-    "dora-plugin-proxy": "^0.2.0",
+    "dora": "^0.1.0",
+    "dora-plugin-atool-build": "^0.2.0",
+    "dora-plugin-hmr": "^0.1.0",
+    "dora-plugin-proxy": "^0.3.0-beta1",
     "eslint": "~1.6.0",
     "eslint-config-airbnb": "~0.1.0",
     "eslint-plugin-react": "~3.5.1",
@@ -26,7 +27,7 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "dora -p 8001 --plugins atool-build,proxy",
+    "dev": "dora -p 8001 --plugins atool-build,proxy,hmr",
     "lint": "eslint --ext .js,.jsx src",
     "build": "rm -rf dist && atool-build && mkdir -p dist/${npm_package_name}/${npm_package_version} && mv dist/*.* dist/${npm_package_name}/${npm_package_version}/"
   }
