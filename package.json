@@ -12,9 +12,17 @@
   "bin": {
     "antd-init": "./bin/antd-init"
   },
+  "scripts": {
+    "test": "mocha --no-timeouts"
+  },
   "dependencies": {
     "through2": "~2.0.0",
     "vinyl-fs": "~2.2.1",
     "which": "~1.2.0"
+  },
+  "devDependencies": {
+    "coffee": "2",
+    "mocha": "2",
+    "rimraf": "~2.4.4"
   }
 }
