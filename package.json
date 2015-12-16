@@ -12,9 +12,6 @@
   "bin": {
     "antd-init": "./bin/antd-init"
   },
-  "scripts": {
-    "publish": "git push origin master --tags"
-  },
   "dependencies": {
     "through2": "~2.0.0",
     "vinyl-fs": "~2.2.1",
