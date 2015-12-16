@@ -13,8 +13,6 @@ https://github.com/airbnb/javascript
 ## Develop
 
 ```
-npm install -g tnpm --registry=http://registry.npm.alibaba-inc.com
-tnpm install
 npm run dev
 ```
 
