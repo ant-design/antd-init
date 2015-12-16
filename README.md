@@ -32,3 +32,10 @@ Build.
 ```bash
 $ npm run build
 ```
+
+## FAQ
+
+> windows 下报错怎么办?
+
+https://github.com/ant-design/ant-design/issues/650#issuecomment-164968437
+
