@@ -37,4 +37,4 @@ $ npm run build
 
 > windows 下报错怎么办 ?
 
-参考这个 issue 解决： https://github.com/ant-design/ant-design/issues/650#issuecomment-164968437
+参考这个 issue 解决： https://github.com/ant-design/ant-design/issues/650#issuecomment-164966511
