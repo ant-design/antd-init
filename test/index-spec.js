@@ -22,6 +22,8 @@ describe('antd-init', function() {
     coffee
       .spawn(binPath)
       .expect('stdout', [/Write \.\/index\.jsx/, /npm install end/])
+      //.expect('stderr', '')
+      .debug()
       .end(done);
   });
 
@@ -29,6 +31,7 @@ describe('antd-init', function() {
     coffee.spawn('npm', 'run build'.split(' '))
       .expect('stdout', [/extract-text-webpack-plugin/, /Time:/, /Hash:/])
       .expect('stderr', '')
+      .debug()
       .end(done);
   });
 
@@ -38,6 +41,7 @@ describe('antd-init', function() {
     var c = coffee.spawn(doraPath, '-p 8001 --plugins atool-build,proxy,hmr'.split(' '))
       .expect('stdout', [/proxy: listened on/, /dora: listened on 8001/, /webpack: bundle build is now finished\./])
       .expect('stderr', '')
+      .debug()
       .end(done);
 
     setTimeout(function() {
