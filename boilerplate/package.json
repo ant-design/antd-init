@@ -12,14 +12,13 @@
     "react-dom": "~0.14.3"
   },
   "devDependencies": {
-    "babel-eslint": "~4.0.5",
     "dora": "^0.1.0",
     "dora-plugin-atool-build": "^0.2.0",
     "dora-plugin-hmr": "^0.1.0",
     "dora-plugin-proxy": "^0.3.0-beta5",
-    "eslint": "~1.6.0",
-    "eslint-config-airbnb": "~0.1.0",
-    "eslint-plugin-react": "~3.5.1",
+    "eslint": "~1.10.3",
+    "eslint-config-airbnb": "~2.1.0",
+    "eslint-plugin-react": "~3.11.3",
     "pre-commit": "1.x"
   },
   "pre-commit": [
