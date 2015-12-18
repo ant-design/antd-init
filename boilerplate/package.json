@@ -8,6 +8,7 @@
     "antd": "0.10.x",
     "atool-build": "0.3.x",
     "babel-plugin-antd": "^0.1.2",
+    "es3ify-loader": "^0.1.0",
     "react": "~0.14.3",
     "react-dom": "~0.14.3"
   },
