@@ -1,11 +1,11 @@
 import React from 'react';
-import { Datepicker } from 'antd';
+import { DatePicker } from 'antd';
 
 const App = React.createClass({
   render() {
-    return (<div>
-      <Datepicker />
-    </div>);
+    return (
+      <DatePicker />
+    );
   },
 });
 
