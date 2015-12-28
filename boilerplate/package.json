@@ -28,6 +28,6 @@
   "scripts": {
     "dev": "dora -p 8001 --plugins atool-build,proxy,hmr",
     "lint": "eslint --ext .js,.jsx src",
-    "build": "rm -rf dist && atool-build && mkdir -p dist/${npm_package_name}/${npm_package_version} && mv dist/*.* dist/${npm_package_name}/${npm_package_version}/"
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name/{npm_package_version}"
   }
 }
