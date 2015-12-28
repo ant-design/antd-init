@@ -14,7 +14,7 @@ $ npm i antd-init -g
 
 ## Usage
 
-Generate biolerplate.
+Generate boilerplate.
 
 ```bash
 $ mkdir foo && cd foo
