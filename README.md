@@ -6,6 +6,13 @@
 
 ----
 
+## Feature
+
+- Generate a webpack workflow based boilerplate.
+- support ES2015 and less.
+- Local development via [dora](https://github.com/dora-js/dora), support proxy, HMR and unit test.
+- support custom webpack.config，[examples](./boilerplate/webpack.config.js).
+
 ## Install
 
 ```bash
