@@ -3,7 +3,7 @@
 ## Environment
 
 ```
-node >= 0.12
+node >= 4
 ```
 
 ## Code Style
