@@ -1,4 +1,3 @@
-
 module.exports = function(webpackConfig) {
   webpackConfig.module.loaders.forEach(function(loader) {
     if (loader.loader === 'babel') {
