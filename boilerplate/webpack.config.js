@@ -3,12 +3,14 @@ module.exports = function(webpackConfig) {
     if (loader.loader === 'babel') {
       // https://github.com/ant-design/babel-plugin-antd
       loader.query.plugins.push('antd');
-
-      loader.loaders = ['es3ify', 'babel?'+JSON.stringify(loader.query)];
-      delete loader.query;
-      delete loader.loader;
     }
     return loader;
+  });
+
+  // Fix ie8 compatibility
+  webpackConfig.module.loaders.unshift({
+    test: /\.jsx?$/,
+    loader: 'es3ify',
   });
 
   return webpackConfig;
