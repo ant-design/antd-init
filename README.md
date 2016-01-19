@@ -13,6 +13,8 @@
 - Local development via [dora](https://github.com/dora-js/dora), support proxy, HMR and unit test.
 - support custom webpack.config，[examples](./boilerplate/webpack.config.js).
 
+More usage: http://ant-tool.github.io/
+
 ## Install
 
 ```bash
