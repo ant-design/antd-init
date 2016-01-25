@@ -2,27 +2,14 @@
 
 ----
 
-## 使用方法
-
-### 安装依赖
+## 查看演示
 
 ```bash
 $ npm install
+$ npm run dev
 ```
 
-### 本地调试
-
-```bash
-$ npm start
-```
-
-然后访问 http://127.0.0.1:8000/a.html 。
-
-### 构建
-
-```bash
-$ npm build
-```
+然后访问 http://127.0.0.1:8989/a.html 。
 
 ## 颜色配置方式
 
