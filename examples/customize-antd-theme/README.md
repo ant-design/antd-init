@@ -13,13 +13,13 @@ $ npm run dev
 
 ## 颜色配置方式
 
-有三种方式：
+有三种方式，选择一种即可。
 
 > 注意一定要引入 `antd/style/index.less` 文件，而不是默认的 `antd/lib/index.css` 文件。
 
-1. 配置在 `package.json` 下的 `theme` 字段。
+- 配置在 `package.json` 下的 `theme` 字段。
 
-2. 自定义的 webpack.config.js 文件，将 lessloader 配置如下：
+- 自定义的 webpack.config.js 文件，将 lessloader 配置如下：
 
    ```js
     var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -43,7 +43,7 @@ $ npm run dev
    };
    ```
 
-3. 样式覆盖。不要直接引入 `antd/style/index.less`，而是改成一下的方式：
+- 样式覆盖。不要直接引入 `antd/style/index.less`，而是改成一下的方式：
 
    ```css
    @import "antd/themes/default/index.less";
