@@ -49,5 +49,4 @@ $ npm run dev
    @import "antd/themes/default/index.less";
    @import "your-theme-file";    // 用于覆盖上面定义的变量
    @import "antd/style/core/index.less";
-   @import "antd/style/components/index.less";
    ```
