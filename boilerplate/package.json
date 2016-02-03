@@ -17,9 +17,9 @@
     "dora-plugin-atool-build": "0.4.x",
     "dora-plugin-hmr": "0.3.x",
     "dora-plugin-proxy": "0.5.x",
-    "eslint": "~1.10.3",
-    "eslint-config-airbnb": "~2.1.0",
-    "eslint-plugin-react": "~3.11.3",
+    "eslint": "1.10.x",
+    "eslint-config-airbnb": "4.0.x",
+    "eslint-plugin-react": "3.16.x",
     "pre-commit": "1.x"
   },
   "pre-commit": [
