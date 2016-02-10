@@ -46,7 +46,7 @@ $ npm run dev
 - 样式覆盖。不要直接引入 `antd/style/index.less`，而是改成一下的方式：
 
    ```css
-   @import "antd/themes/default/index.less";
+   @import "antd/style/themes/default/index.less";
    @import "your-theme-file";    // 用于覆盖上面定义的变量
    @import "antd/style/core/index.less";
    ```
