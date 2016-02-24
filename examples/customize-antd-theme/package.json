@@ -1,9 +1,9 @@
 {
   "entry": {
-    "a": "./a.jsx"
+    "index": "./index.jsx"
   },
   "dependencies": {
-    "antd": "0.11.x",
+    "antd": "~0.12.4",
     "atool-build": "0.4.x",
     "babel-plugin-antd": "^0.1.2",
     "es3ify-loader": "^0.1.0",
