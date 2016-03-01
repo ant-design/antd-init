@@ -17,9 +17,9 @@ $ npm run dev
 
 > 注意一定要引入 `antd/style/index.less` 文件，而不是默认的 `antd/lib/index.css` 文件。
 
-- 配置在 `package.json` 下的 `theme` 字段。
+- 配置在 `package.json` 下的 `theme` 字段。（需要使用 antd-init）
 
-- 自定义的 webpack.config.js 文件，将 lessloader 配置如下：
+- 自定义 webpack.config.js 文件，将 lessloader 配置如下：
 
    ```js
     var ExtractTextPlugin = require("extract-text-webpack-plugin");
