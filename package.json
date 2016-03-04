@@ -16,9 +16,9 @@
     "test": "mocha --no-timeouts"
   },
   "dependencies": {
-    "through2": "~2.0.0",
-    "vinyl-fs": "~2.2.1",
-    "which": "~1.2.0"
+    "through2": "2.0.x",
+    "vinyl-fs": "2.4.x",
+    "which": "1.2.x"
   },
   "devDependencies": {
     "coffee": "2",

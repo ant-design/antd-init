@@ -5,28 +5,28 @@
     "index": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd": "~0.12.0",
-    "atool-build": "0.5.x",
-    "babel-plugin-antd": "^0.2.0",
-    "es3ify-loader": "^0.1.0",
-    "react": "~0.14.6",
-    "react-dom": "~0.14.6"
+    "antd": "0.12.x",
+    "atool-build": "0.6.x",
+    "babel-plugin-antd": "0.2.x",
+    "react": "0.14.x",
+    "react-dom": "0.14.x"
   },
   "devDependencies": {
-    "dora": "0.2.x",
-    "dora-plugin-atool-build": "0.4.x",
-    "dora-plugin-hmr": "0.3.x",
-    "dora-plugin-proxy": "0.5.x",
-    "eslint": "1.10.x",
-    "eslint-config-airbnb": "4.0.x",
-    "eslint-plugin-react": "3.16.x",
+    "dora": "0.3.x",
+    "dora-plugin-webpack": "0.5.x",
+    "dora-plugin-hmr": "0.4.x",
+    "dora-plugin-proxy": "0.6.x",
+    "eslint": "2.x",
+    "eslint-config-airbnb": "6.x",
+    "eslint-plugin-react": "4.x",
     "pre-commit": "1.x"
   },
   "pre-commit": [
     "lint"
   ],
   "scripts": {
-    "dev": "dora -p 8001 --plugins atool-build,proxy,hmr",
+    "start": "npm run dev",
+    "dev": "dora -p 8001 --plugins webpack,proxy,hmr",
     "lint": "eslint --ext .js,.jsx src",
     "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
   }
