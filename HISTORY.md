@@ -2,6 +2,10 @@
 
 ---
 
+## 0.8.0
+
+- 支持 CSS 的 livereload
+
 ## 0.7.0
 
 - 升级 dora 到 0.3，以及相应插件的升级，详见：https://github.com/dora-js/dora/issues/26
