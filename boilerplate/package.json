@@ -15,6 +15,7 @@
     "dora": "0.3.x",
     "dora-plugin-webpack": "0.5.x",
     "dora-plugin-hmr": "0.4.x",
+    "dora-plugin-livereload": "0.3.x",
     "dora-plugin-proxy": "0.6.x",
     "eslint": "2.x",
     "eslint-config-airbnb": "6.x",
@@ -26,7 +27,7 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "dora -p 8001 --plugins webpack,proxy,hmr",
+    "dev": "dora -p 8001 --plugins webpack,proxy,hmr,livereload?enableJs=false",
     "lint": "eslint --ext .js,.jsx src",
     "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
   }
