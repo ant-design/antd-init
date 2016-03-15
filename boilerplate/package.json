@@ -1,6 +1,7 @@
 {
   "name": "antd-demo",
   "version": "1.0.0",
+  "private": true,
   "entry": {
     "index": "./src/entry/index.jsx"
   },
