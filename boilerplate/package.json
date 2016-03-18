@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "dora": "0.3.x",
-    "dora-plugin-webpack": "0.5.x",
-    "dora-plugin-hmr": "0.4.x",
+    "dora-plugin-webpack": "0.6.x",
+    "dora-plugin-hmr": "0.5.x",
     "dora-plugin-livereload": "0.3.x",
     "dora-plugin-proxy": "0.6.x",
     "eslint": "2.x",
