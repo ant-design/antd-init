@@ -7,9 +7,6 @@
   },
   "dependencies": {
     "antd": "0.12.x",
-    "atool-build": "0.6.x",
-    "babel-plugin-antd": "0.2.x",
-    "es3ify-loader": "^0.1.0",
     "react": "0.14.x",
     "react-dom": "0.14.x"
   },
@@ -22,7 +19,11 @@
     "eslint": "2.x",
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
-    "pre-commit": "1.x"
+    "pre-commit": "1.x",
+    "atool-build": "0.6.x",
+    "atool-test": "0.4.x",
+    "babel-plugin-antd": "0.2.x",
+    "es3ify-loader": "^0.1.0"
   },
   "pre-commit": [
     "lint"
@@ -31,6 +32,7 @@
     "start": "npm run dev",
     "dev": "dora -p 8001 --plugins webpack,hmr,proxy,livereload?enableJs=false",
     "lint": "eslint --ext .js,.jsx src",
-    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}",
+    "test": "atool-test"
   }
 }
