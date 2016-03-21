@@ -7,6 +7,9 @@
   },
   "dependencies": {
     "antd": "0.12.x",
+    "atool-build": "0.6.x",
+    "babel-plugin-antd": "0.2.x",
+    "es3ify-loader": "^0.1.0",
     "react": "0.14.x",
     "react-dom": "0.14.x"
   },
@@ -20,10 +23,7 @@
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
     "pre-commit": "1.x",
-    "atool-build": "0.6.x",
-    "atool-test": "0.4.x",
-    "babel-plugin-antd": "0.2.x",
-    "es3ify-loader": "^0.1.0"
+    "atool-test": "0.4.x"
   },
   "pre-commit": [
     "lint"
