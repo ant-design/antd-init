@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { DatePicker } from 'antd';
 import './App.less';
 
-class App extends Component {
-  render() {
-    return <DatePicker />;
-  }
-}
+const App = () =>
+  <DatePicker />;
+
 
 export default App;
 
