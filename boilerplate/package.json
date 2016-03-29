@@ -22,7 +22,8 @@
     "eslint": "2.x",
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
-    "pre-commit": "1.x"
+    "pre-commit": "1.x",
+    "babel-eslint": "^6.0.0"
   },
   "pre-commit": [
     "lint"
