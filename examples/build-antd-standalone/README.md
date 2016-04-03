@@ -12,3 +12,7 @@ $ npm run build
 然后构建后的文件为 `dist/antd.js` 和 `dist/antd.css`。
 
 这样你可以和 react 一样通过脚本引入的方式使用 `antd`。
+
+---
+
+注意：`webpack.config.js` 中移除了 `babel-plugin-antd` 和 `CommonPlugin` 以满足单独构建的需求。
