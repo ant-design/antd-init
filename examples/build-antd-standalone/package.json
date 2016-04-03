@@ -1,0 +1,33 @@
+{
+  "entry": {
+    "antd": "./index.jsx"
+  },
+  "dependencies": {
+    "antd": "0.12.x",
+    "atool-build": "0.6.x",
+    "babel-plugin-antd": "0.2.x",
+    "es3ify-loader": "^0.1.0",
+    "react": "0.14.x",
+    "react-dom": "0.14.x"
+  },
+  "devDependencies": {
+    "dora": "0.3.x",
+    "dora-plugin-webpack": "0.6.x",
+    "dora-plugin-hmr": "0.5.x",
+    "dora-plugin-livereload": "0.3.x",
+    "dora-plugin-proxy": "0.6.x",
+    "eslint": "2.x",
+    "eslint-config-airbnb": "6.x",
+    "eslint-plugin-react": "4.x",
+    "pre-commit": "1.x",
+    "babel-eslint": "^6.0.0"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "dev": "dora -p 8001 --plugins webpack,hmr,proxy,livereload?enableJs=false",
+    "lint": "eslint --ext .js,.jsx src",
+    "build": "atool-build -o ./dist/"
+  }
+}
