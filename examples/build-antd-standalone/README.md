@@ -11,4 +11,4 @@ $ npm run build
 
 然后构建后的文件为 `dist/antd.js` 和 `dist/antd.css`。
 
-你可以和 react
+这样你可以和 react 一样通过脚本引入的方式使用 `antd`。
