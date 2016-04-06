@@ -17,12 +17,12 @@
   },
   "dependencies": {
     "through2": "2.0.x",
-    "vinyl-fs": "2.4.x",
+    "vinyl-fs": "^2.4.3",
     "which": "1.2.x"
   },
   "devDependencies": {
-    "coffee": "2",
+    "coffee": "^3.2.1",
     "mocha": "2",
-    "rimraf": "~2.4.4"
+    "rimraf": "^2.5.2"
   }
 }
