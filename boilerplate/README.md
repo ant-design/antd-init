@@ -16,7 +16,7 @@ https://github.com/airbnb/javascript
 npm run dev
 ```
 
-访问 http://127.0.0.1:8989 
+访问 http://127.0.0.1:8989
 
 ## Build
 
