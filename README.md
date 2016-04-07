@@ -33,7 +33,7 @@ $ antd-init
 Start development server.
 
 ```bash
-$ npm run dev
+$ npm start
 ```
 
 Build.
