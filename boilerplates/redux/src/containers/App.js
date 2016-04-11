@@ -4,9 +4,7 @@ import { createSelector } from 'reselect';
 import Count from '../components/Count/Count';
 
 const App = (props) =>
-  <div>
-    <Count {...props} />
-  </div>
+  <Count {...props} />
 
 App.propTypes = {
 };

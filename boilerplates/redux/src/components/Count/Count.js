@@ -1,6 +1,7 @@
 import styles from './Count.module.less';
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import { Button } from 'antd';
 import { COUNT_DECREASE, COUNT_DECREASE_ASYNC, COUNT_REDUCE } from '../../constants/count';
 
 const Count = ({ dispatch, count }) =>
@@ -9,9 +10,9 @@ const Count = ({ dispatch, count }) =>
       [styles.odd]: count % 2 === 1,
     })}>
     <div>{count}</div>
-    <button onClick={() => { dispatch({ type: COUNT_DECREASE }); }}>+</button>
-    <button onClick={() => { dispatch({ type: COUNT_REDUCE }); }}>-</button>
-    <button onClick={() => { dispatch({ type: COUNT_DECREASE_ASYNC }); }}>+ (async)</button>
+    <Button className={styles.button} size="small" onClick={() => { dispatch({ type: COUNT_DECREASE }); }}>+</Button>
+    <Button className={styles.button} size="small" onClick={() => { dispatch({ type: COUNT_REDUCE }); }}>-</Button>
+    <Button className={styles.button} size="small" type="primary" onClick={() => { dispatch({ type: COUNT_DECREASE_ASYNC }); }}>+ (async)</Button>
     <br /><br />
     <If condition={count % 2 === 0}>
       <span>even</span>
