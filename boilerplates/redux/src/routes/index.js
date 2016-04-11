@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, Link } from 'react-router';
 import App from '../containers/App';
 
 const Layout = ({ children }) =>
-  <div>
+  <div style={{margin:20}}>
     <h1>Demo</h1>
     {children}
     <br />
