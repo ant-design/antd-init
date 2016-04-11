@@ -4,6 +4,7 @@ var vfs = require('vinyl-fs');
 var fs = require('fs');
 var through = require('through2');
 var path = require('path');
+var inquirer = require('inquirer');
 var join = path.join;
 var basename = path.basename;
 
@@ -13,17 +14,38 @@ if (process.argv.length === 3 &&
   return;
 }
 
-var cwd = join(__dirname, '../boilerplate');
-var dest = process.cwd();
-
-vfs.src('**/*', {cwd: cwd, cwdbase: true, dot: true})
-  .pipe(template(dest))
-  .pipe(vfs.dest(dest))
-  .on('end', function() {
-    fs.renameSync(path.join(dest,'gitignore'),path.join(dest,'.gitignore'));
-    require('../lib/install');
+inquirer.prompt({
+    name: 'type',
+    type: 'list',
+    message: 'Please select boilerplate type',
+    choices: [
+      {
+        name: 'plain react - for simple project',
+        value: 'plain-react',
+      },
+      {
+        name: 'redux - for complex project',
+        value: 'redux',
+      },
+    ],
   })
-  .resume();
+  .then(function(answers) {
+    init(answers.type);
+  });
+
+function init(type) {
+  var cwd = join(__dirname, '../boilerplates', type);
+  var dest = process.cwd();
+
+  vfs.src('**/*', {cwd: cwd, cwdbase: true, dot: true})
+    .pipe(template(dest))
+    .pipe(vfs.dest(dest))
+    .on('end', function() {
+      fs.renameSync(path.join(dest,'gitignore'),path.join(dest,'.gitignore'));
+      require('../lib/install');
+    })
+    .resume();
+}
 
 function template(dest) {
   return through.obj(function (file, enc, cb) {
