@@ -4,10 +4,6 @@ import { COUNT_DECREASE_ASYNC, COUNT_DECREASE } from '../constants/count';
 import { getAsyncCountResult } from '../services/api';
 import { message } from 'antd';
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 function* decreaseCountAsync() {
   const { data } = yield call(getAsyncCountResult);
   if (data) {
