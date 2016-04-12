@@ -6,6 +6,7 @@
   "dependencies": {
     "antd": "^0.12.13",
     "atool-build": "0.6.x",
+    "babel-plugin-antd": "^0.3.2",
     "babel-polyfill": "^6.3.14",
     "classnames": "^2.2.3",
     "history": "^2.0.1",
