@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "entry": {
+    "index": "./src/entries/index.js"
+  },
+  "dependencies": {
+    "antd": "^0.12.13",
+    "atool-build": "0.6.x",
+    "babel-plugin-antd": "^0.3.2",
+    "babel-polyfill": "^6.3.14",
+    "classnames": "^2.2.3",
+    "history": "^2.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jsx-control-statements": "^3.1.0",
+    "react": "0.14.x",
+    "react-dom": "0.14.x",
+    "react-redux": "4.4.x",
+    "react-router": "^2.0.1",
+    "react-router-redux": "^4.0.1",
+    "redux": "3.3.x",
+    "redux-actions": "0.9.x",
+    "redux-saga": "^0.9.5",
+    "reselect": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.2",
+    "dora": "0.3.x",
+    "dora-plugin-browser-history": "^0.1.1",
+    "dora-plugin-livereload": "^0.3.0",
+    "dora-plugin-proxy": "^0.6.1",
+    "dora-plugin-webpack": "0.6.x",
+    "dora-plugin-webpack-hmr": "^0.1.0",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
+    "pre-commit": "1.x",
+    "redbox-react": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "start": "dora --plugins \"proxy,webpack,webpack-hmr,livereload?enableJs=false,browser-history?index=/src/entries/index.html\"",
+    "build": "atool-build",
+    "lint": "eslint --ext .js,.jsx src/"
+  }
+}
