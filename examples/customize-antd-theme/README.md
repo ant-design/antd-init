@@ -1,5 +1,7 @@
 # 修改 Ant Design 的主色系
 
+> 适用于 `antd@1.x`。
+
 ----
 
 ## 查看演示
@@ -15,7 +17,7 @@ $ npm run dev
 
 有三种方式，选择一种即可。
 
-> 注意一定要引入 `antd/style/index.less` 文件，而不是默认的 `antd/lib/index.css` 文件。
+> 注意一定要引入 `antd/dist/antd.less` 文件，而不是 `antd/dist/antd.css` 文件。
 
 - 配置在 `package.json` 下的 `theme` 字段。（需要使用 antd-init）
 
@@ -43,12 +45,13 @@ $ npm run dev
    };
    ```
 
-- 样式覆盖。不要直接引入 `antd/style/index.less`，而是改成以下的方式：
+- 样式覆盖。不要直接引入 `antd/dist/antd.less`，而是改成以下的方式：
 
   建立一个单独的 `less` 文件如下，再引入这个文件。
 
    ```css
-   @import "~antd/style/themes/default/index.less";
-   @import "your-theme-file";    // 用于覆盖上面定义的变量
-   @import "~antd/style/core/index.less";
+   @import "~antd/lib/style/themes/default.less";
+   @import "your-theme-file"; // 用于覆盖上面定义的变量
+   @import "~antd/lib/style/core/index.less";
+   @import "~antd/lib/style/components.less";
    ```

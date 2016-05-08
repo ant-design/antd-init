@@ -1,5 +1,7 @@
 # Build standalone antd
 
+> 适用于 `antd@0.12`，`antd@1.0.0` 已提供单独的构建文件。
+
 构建独立的 antd.js 和 antd.css。
 
 ----
