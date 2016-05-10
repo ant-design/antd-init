@@ -19,7 +19,11 @@ $ npm run dev
 
 > 注意一定要引入 `antd/dist/antd.less` 文件，而不是 `antd/dist/antd.css` 文件。
 
+#### package.json
+
 - 配置在 `package.json` 下的 `theme` 字段。（需要使用 antd-init）
+
+#### webpack.config.js
 
 - 自定义 webpack.config.js 文件，将 lessloader 配置如下：
 
@@ -44,6 +48,8 @@ $ npm run dev
      return webpackConfig;
    };
    ```
+
+#### less
 
 - 样式覆盖。不要直接引入 `antd/dist/antd.less`，而是改成以下的方式：
 
