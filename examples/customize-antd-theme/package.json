@@ -3,12 +3,12 @@
     "index": "./index.jsx"
   },
   "dependencies": {
-    "antd": "0.12.x",
-    "atool-build": "0.6.x",
-    "babel-plugin-antd": "0.2.x",
-    "es3ify-loader": "^0.1.0",
-    "react": "0.14.x",
-    "react-dom": "0.14.x"
+    "antd": "~1.0.0",
+    "atool-build": "0.7.x",
+    "babel-plugin-antd": "0.4.x",
+    "es3ify-loader": "^0.2.0",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
   },
   "devDependencies": {
     "dora": "0.3.x",
