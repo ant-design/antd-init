@@ -13,12 +13,6 @@ const Count = ({ dispatch, count }) =>
     <Button className={styles.button} size="small" onClick={() => { dispatch({ type: COUNT_DECREASE }); }}>+</Button>
     <Button className={styles.button} size="small" onClick={() => { dispatch({ type: COUNT_REDUCE }); }}>-</Button>
     <Button className={styles.button} size="small" type="primary" onClick={() => { dispatch({ type: COUNT_DECREASE_ASYNC }); }}>+ (async)</Button>
-    <br /><br />
-    <If condition={count % 2 === 0}>
-      <span>even</span>
-    <Else />
-      <span>odd</span>
-    </If>
   </div>
 
 Count.propTypes = {
