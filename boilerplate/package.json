@@ -23,7 +23,8 @@
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
-    "pre-commit": "1.x"
+    "pre-commit": "1.x",
+    "atool-test": "0.4.x"
   },
   "pre-commit": [
     "lint"
@@ -31,6 +32,7 @@
   "scripts": {
     "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false\"",
     "lint": "eslint --ext .js,.jsx src",
-    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}",
+    "test": "atool-test"
   }
 }
