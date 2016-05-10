@@ -14,14 +14,16 @@ import 'antd/lib/index.css';
 //////////////////////
 // Store
 
+const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
 const enhancer = compose(
-  applyMiddleware(createSagaMiddleware(sagas)),
+  applyMiddleware(sagaMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 const store = createStore(combineReducers({
   ...reducers, routing,
 }), initialState, enhancer);
+sagaMiddleware.run(sagas);
 
 if (module.hot) {
   module.hot.accept('../reducers', () => {
