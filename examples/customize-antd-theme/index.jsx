@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/style/index.less';  // import less for modifyVars
+import 'antd/dist/antd.less';  // import less for modifyVars
 import { Form, Select, InputNumber, DatePicker, Switch, Slider, Button, message, Row, Col } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
