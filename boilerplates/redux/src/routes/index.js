@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
-import App from '../containers/App';
+import App from '../components/App';
 
 const Layout = ({ children }) =>
   <div style={{margin:20}}>
