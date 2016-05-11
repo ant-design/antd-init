@@ -3,11 +3,25 @@
 module.exports = {
   '/webapi/*': 'http://1.1.1.1',
 
-  '/api/async_count': function(req, res) {
+  '/api/todos': function(req, res) {
     setTimeout(function() {
       res.json({
         success: true,
-        data: Math.floor(Math.random() * 2) === 1,
+        data: [
+          {
+            id: 1,
+            text: 'Learn antd',
+            isComplete: true,
+          },
+          {
+            id: 2,
+            text: 'Learn ant-tool',
+          },
+          {
+            id: 3,
+            text: 'Learn dora',
+          },
+        ],
       });
     }, 500);
   },

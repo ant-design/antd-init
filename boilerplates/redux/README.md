@@ -61,7 +61,6 @@ $ npm run build -- --no-compress
 - [redux-saga](https://github.com/yelouafi/redux-saga)
 - [redux-actions](https://github.com/acdlite/redux-actions)
 - [react-router](https://github.com/reactjs/react-router)
-- [reselect](https://github.com/reactjs/reselect)
 - [classnames](https://github.com/JedWatson/classnames)
 - [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch)
 - [react-router](https://github.com/reactjs/react-router)
@@ -80,10 +79,6 @@ $ npm run build -- --no-compress
 支持 css-modules
 
 > 后缀为 `.module.less` 或 `.module.css` 的会被解析为 css-modules
-
-内置支持 jsx-control-statements
-
-> jsx 里可以通过 If, Else 和 For 标签来实现控制语句
 
 运行错误和语法错误的提醒
 
