@@ -7,7 +7,7 @@
     "url": "https://github.com/ant-design/antd-init"
   },
   "homepage": "https://github.com/ant-design/antd-init",
-  "mai": "chencheng <sorrycc@gmail.com>",
+  "mail": "chencheng <sorrycc@gmail.com>",
   "license": "MIT",
   "bin": {
     "antd-init": "./bin/antd-init"
