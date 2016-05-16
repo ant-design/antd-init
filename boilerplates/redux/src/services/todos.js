@@ -1,5 +1,5 @@
-import fetch from 'isomorphic-fetch';
+import xFetch from './xFetch';
 
 export async function getAll() {
-  return fetch(`/api/todos`).then(res => res.json());
+  return xFetch(`/api/todos`);
 }
