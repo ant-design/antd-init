@@ -9,6 +9,7 @@ import { browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer as routing } from 'react-router-redux';
 import reducers from '../reducers/index';
 import sagas from '../sagas/index';
+import './index.less';
 
 //////////////////////
 // Store

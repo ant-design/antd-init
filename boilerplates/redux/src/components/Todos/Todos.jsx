@@ -54,9 +54,22 @@ class Todos extends Component {
 
 Todos.propTypes = propTypes;
 
-function mapStateToProps({ todos }) {
+function filter(todos, pathname) {
+  const newList = todos.list.filter(todo => {
+    if (pathname === '/actived') {
+      return !todo.isComplete;
+    }
+    if (pathname === '/completed') {
+      return todo.isComplete;
+    }
+    return true;
+  });
+  return { ...todos, list: newList };
+}
+
+function mapStateToProps({ todos }, { location }) {
   return {
-    todos,
+    todos: filter(todos, location.pathname),
   };
 }
 
