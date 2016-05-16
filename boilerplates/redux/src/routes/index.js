@@ -1,28 +1,21 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
 import App from '../components/App';
+import Layout from '../components/Layout';
 
-const Layout = ({ children }) =>
-  <div style={{margin:20}}>
-    <h1>Demo</h1>
-    <br />
-    {children}
-    <br />
-    <Link to="/">Go To /</Link><br />
-    <Link to="/foo">Go To /foo</Link><br />
-  </div>
-
-const Foo = (props) =>
+const NotFound = (props) =>
   <div>
-    Foo
+    NotFound
   </div>
 
 const Routes = ({ history }) =>
   <Router history={history}>
     <Route path="/" component={Layout}>
       <IndexRoute component={App} />
-      <Route path="/foo" component={Foo} />
+      <Route path="actived" component={App} />
+      <Route path="completed" component={App} />
     </Route>
+    <Route path="*" component={NotFound}/>
   </Router>
 
 Routes.propTypes = {
