@@ -10,11 +10,9 @@ const NotFound = (props) =>
 
 const Routes = ({ history }) =>
   <Router history={history}>
-    <Route path="/" component={Layout}>
-      <IndexRoute component={App} />
-      <Route path="actived" component={App} />
-      <Route path="completed" component={App} />
-    </Route>
+    <Route path="/" component={App} />
+    <Route path="/actived" component={App} />
+    <Route path="/completed" component={App} />
     <Route path="*" component={NotFound}/>
   </Router>
 
