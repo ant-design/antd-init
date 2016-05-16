@@ -28,6 +28,9 @@ Generate boilerplate.
 ```bash
 $ mkdir foo && cd foo
 $ antd-init
+// or
+$ antd-init --type plain-react
+$ antd-init --type redux
 ```
 
 Start development server.
