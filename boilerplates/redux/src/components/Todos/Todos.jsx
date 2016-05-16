@@ -3,6 +3,7 @@ import React, {
   PropTypes,
 } from 'react';
 import { connect } from 'react-redux';
+import { Spin } from 'antd';
 import styles from './Todos.module.less';
 import Todo from './Todo';
 
@@ -27,7 +28,7 @@ class Todos extends Component {
   renderList() {
     const { list, loading } = this.props.todos;
     if (loading) {
-      return <div className={styles.loading}>Loading</div>;
+      return <Spin />;
     } else {
       return (
         <div className={styles.list}>
@@ -45,7 +46,6 @@ class Todos extends Component {
   render() {
     return (
       <div className={styles.normal}>
-        <h2>Todos</h2>
         { this.renderList() }
       </div>
     );

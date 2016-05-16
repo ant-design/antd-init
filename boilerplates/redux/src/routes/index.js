@@ -5,6 +5,7 @@ import App from '../components/App';
 const Layout = ({ children }) =>
   <div style={{margin:20}}>
     <h1>Demo</h1>
+    <br />
     {children}
     <br />
     <Link to="/">Go To /</Link><br />

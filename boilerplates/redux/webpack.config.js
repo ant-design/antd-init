@@ -3,7 +3,7 @@
 const webpack = require('atool-build/lib/webpack');
 
 module.exports = function(webpackConfig) {
-  webpackConfig.babel.plugins.push('antd');
+  webpackConfig.babel.plugins.push(['antd', {style: true}]);
 
   // Fix ie8 compatibility
   //webpackConfig.module.loaders.unshift({
