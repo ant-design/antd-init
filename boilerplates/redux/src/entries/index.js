@@ -66,7 +66,7 @@ if (module.hot) {
     }
   };
   module.hot.accept('../routes/index', () => {
-    render()
+    render();
   });
 }
 
