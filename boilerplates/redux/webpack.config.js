@@ -7,6 +7,7 @@ const path = require('path');
 const glob = require('glob');
 
 module.exports = function(webpackConfig) {
+  webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['antd', {style: 'css'}]);
 
   // Enable this if you have to support IE8.
