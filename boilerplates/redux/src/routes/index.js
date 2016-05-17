@@ -2,11 +2,7 @@ import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
 import App from '../components/App';
 import Layout from '../components/Layout';
-
-const NotFound = (props) =>
-  <div>
-    NotFound
-  </div>
+import NotFound from './NotFound';
 
 const Routes = ({ history }) =>
   <Router history={history}>
@@ -14,7 +10,7 @@ const Routes = ({ history }) =>
     <Route path="/actived" component={App} />
     <Route path="/completed" component={App} />
     <Route path="*" component={NotFound}/>
-  </Router>
+  </Router>;
 
 Routes.propTypes = {
   history: PropTypes.any,

@@ -23,6 +23,7 @@ class Layout extends Component {
             <Link to="/">All</Link><br />
             <Link to="/actived">Actived</Link><br />
             <Link to="/completed">Completed</Link><br />
+            <Link to="/404">404</Link><br />
           </div>
           <div className={styles.main}>
             {children}
