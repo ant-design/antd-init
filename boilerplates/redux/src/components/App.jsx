@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Todos from './Todos/Todos';
-import Layout from './Layout';
+import MainLayout from '../layouts/MainLayout/MainLayout';
 
 const App = ({ location }) => {
   return (
-    <Layout>
+    <MainLayout>
       <Todos location={location} />
-    </Layout>
+    </MainLayout>
   );
 };
 
