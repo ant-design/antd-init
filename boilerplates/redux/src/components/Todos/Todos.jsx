@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
-import styles from './Todos.module.less';
+import styles from './Todos.less';
 import Todo from './Todo';
 
 const propTypes = {

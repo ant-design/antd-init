@@ -78,7 +78,7 @@ $ npm run build -- --no-compress
 
 支持 css-modules
 
-> 后缀为 `.module.less` 或 `.module.css` 的会被解析为 css-modules
+> 所有 less 文件会被解析为 css-modules
 
 运行错误和语法错误的提醒
 
