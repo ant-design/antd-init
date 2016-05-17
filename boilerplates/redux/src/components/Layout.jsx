@@ -3,7 +3,7 @@ import React, {
   PropTypes,
 } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
-import styles from './Layout.module.less';
+import styles from './Layout.less';
 
 const propTypes = {
 };

@@ -2,7 +2,7 @@ import React, {
   Component,
   PropTypes,
 } from 'react';
-import styles from './Todo.module.less';
+import styles from './Todo.less';
 import classnames from 'classnames';
 
 const propTypes = {

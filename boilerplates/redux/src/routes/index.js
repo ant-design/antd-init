@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
 import App from '../components/App';
 import Layout from '../components/Layout';
-import NotFound from './NotFound';
+import NotFound from '../components/NotFound';
 
 const Routes = ({ history }) =>
   <Router history={history}>
