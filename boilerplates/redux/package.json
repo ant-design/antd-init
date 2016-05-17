@@ -19,7 +19,7 @@
     "redux-saga": "^0.10.4"
   },
   "devDependencies": {
-    "atool-test-mocha": "^0.1.2",
+    "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^6.0.2",
     "dora": "0.3.x",
     "dora-plugin-browser-history": "^0.1.1",

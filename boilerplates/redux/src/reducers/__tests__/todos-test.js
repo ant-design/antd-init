@@ -1,17 +1,18 @@
-const expect = require('expect');
-const todos = require('../todos').default;
+import expect from 'expect';
+import todos from '../todos';
 
-describe('todos', function() {
-  it('todos/get', function() {
+describe('todos', () => {
+
+  it('todos/get', () => {
     expect(todos({}, { type: 'todos/get' })).toEqual({ loading: true });
   });
-  it('todos/get/success', function() {
-    expect(todos({
-      list: 1,
-      loading: true,
-    }, { type: 'todos/get/success', payload:2 })).toEqual({
+
+  it('todos/get/success', () => {
+    const newState = todos({ list: 1, loading: true }, { type: 'todos/get/success', payload:2 });
+    expect(newState).toEqual({
       loading: false,
       list: 2,
     });
   });
+
 });
