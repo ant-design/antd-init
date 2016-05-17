@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer as routing } from 'react-router-redux';
 import reducers from '../reducers/index';
-import sagas from '../sagas/index';
+import SagaManager from '../sagas/SagaManager';
 import './index.less';
 
 //////////////////////
@@ -23,13 +23,17 @@ const enhancer = compose(
 const store = createStore(combineReducers({
   ...reducers, routing,
 }), initialState, enhancer);
-sagaMiddleware.run(sagas);
+SagaManager.startSagas(sagaMiddleware);
 
 if (module.hot) {
   module.hot.accept('../reducers', () => {
     const reducers = require('../reducers');
     const combinedReducers = combineReducers({...reducers, routing});
     store.replaceReducer(combinedReducers);
+  });
+  module.hot.accept('../sagas/SagaManager', () => {
+    SagaManager.cancelSagas(store);
+    require('../sagas/SagaManager').default.startSagas(sagaMiddleware);
   });
 }
 
