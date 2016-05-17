@@ -27,7 +27,7 @@ SagaManager.startSagas(sagaMiddleware);
 if (module.hot) {
   module.hot.accept('../reducers', () => {
     const reducers = require('../reducers');
-    const combinedReducers = combineReducers({...reducers, routing});
+    const combinedReducers = combineReducers({ ...reducers, routing });
     store.replaceReducer(combinedReducers);
   });
   module.hot.accept('../sagas/SagaManager', () => {
@@ -54,7 +54,7 @@ if (module.hot) {
   const renderNormally = render;
   const renderException = (error) => {
     const RedBox = require('redbox-react');
-    ReactDOM.render(<RedBox error={error}/>, document.getElementById('root'));
+    ReactDOM.render(<RedBox error={error} />, document.getElementById('root'));
   };
   render = () => {
     try {

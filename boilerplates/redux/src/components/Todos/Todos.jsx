@@ -16,23 +16,23 @@ const Todos = ({ todos, dispatch }) => {
     const { list, loading } = todos;
     if (loading) {
       return <Spin />;
-    } else {
-      return (
-        <div className={styles.list}>
-          { list.map(item => <Todo
-            key={item.id}
-            data={item}
-            onToggleComplete={handleToggleComplete.bind(this, item.id)}
-          />
-            ) }
-        </div>
-      );
     }
+
+    return (
+      <div className={styles.list}>
+        {list.map(item => <Todo
+          key={item.id}
+          data={item}
+          onToggleComplete={handleToggleComplete.bind(this, item.id)}
+        />
+          )}
+      </div>
+    );
   };
 
   return (
     <div className={styles.normal}>
-      { renderList() }
+      {renderList()}
     </div>
   );
 };
