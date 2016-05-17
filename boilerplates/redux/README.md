@@ -36,9 +36,8 @@ $ npm run build -- --no-compress
 ├── /node_modules/       # 第三方类库和工具
 ├── /src/                # 应用源码
 │ ├── /components/       # React components
-│ ├── /constants/        # 常量 (比如 action types 等)
-│ ├── /containers/       # React containers
 │ ├── /entries/          # 应用入口
+│ ├── /layouts/          # 布局信息
 │ ├── /reducers/         # reducers
 │ ├── /routes/           # 路由信息
 │ ├── /sagas/            # redux-sagas
@@ -70,7 +69,7 @@ $ npm run build -- --no-compress
 
 热替换和 LiveReload
 
-> 基于 [Webpack Vanilla HMR](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)，支持 `components`, `containers`, `reducers`, `routers` 目录的模块热替换，其余目录的修改则会自动刷新页面。
+> 基于 [Webpack Vanilla HMR](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)，支持 `components`, `reducers`, `routers`, `sagas`, `layouts` 目录的模块热替换，其余目录的修改则会自动刷新页面。
 
 > CSS 的自动刷新需通过 [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) Chrome 插件配合使用。
 
