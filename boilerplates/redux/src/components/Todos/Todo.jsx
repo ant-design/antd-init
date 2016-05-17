@@ -12,10 +12,15 @@ const Todo = ({ data, onToggleComplete }) => {
   return (
     <div className={todoCls}>
       <div className={styles.checkbox}>
-        <input type="checkbox" value="" checked={isComplete} onChange={onToggleComplete.bind(this)} />
+        <input
+          type="checkbox"
+          value=""
+          checked={isComplete}
+          onChange={onToggleComplete.bind(this)}
+        />
       </div>
       <div className={styles.text}>
-        { text }
+        {text}
       </div>
     </div>
   );
