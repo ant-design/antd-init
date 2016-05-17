@@ -1,58 +1,43 @@
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Spin } from 'antd';
-import styles from './Todos.less';
 import Todo from './Todo';
+import styles from './Todos.less';
 
-const propTypes = {
-};
-
-class Todos extends Component {
-
-  componentWillMount() {
-    this.props.dispatch({
-      type: 'todos/get',
-    });
-  }
-
-  handleToggleComplete(id) {
-    this.props.dispatch({
+const Todos = ({ todos, dispatch }) => {
+  const handleToggleComplete = (id) => {
+    dispatch({
       type: 'todos/toggleComplete',
       payload: id,
     });
-  }
+  };
 
-  renderList() {
-    const { list, loading } = this.props.todos;
+  const renderList = () => {
+    const { list, loading } = todos;
     if (loading) {
       return <Spin />;
     } else {
       return (
         <div className={styles.list}>
           { list.map(item => <Todo
-                key={item.id}
-                data={item}
-                onToggleComplete={this.handleToggleComplete.bind(this, item.id)}
-              />
+            key={item.id}
+            data={item}
+            onToggleComplete={handleToggleComplete.bind(this, item.id)}
+          />
             ) }
         </div>
       );
     }
-  }
+  };
 
-  render() {
-    return (
-      <div className={styles.normal}>
-        { this.renderList() }
-      </div>
-    );
-  }
-}
+  return (
+    <div className={styles.normal}>
+      { renderList() }
+    </div>
+  );
+};
 
-Todos.propTypes = propTypes;
+Todos.propTypes = {};
 
 function filter(todos, pathname) {
   const newList = todos.list.filter(todo => {
