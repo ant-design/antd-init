@@ -19,6 +19,7 @@
     "redux-saga": "^0.10.4"
   },
   "devDependencies": {
+    "atool-test-mocha": "^0.1.2",
     "babel-eslint": "^6.0.2",
     "dora": "0.3.x",
     "dora-plugin-browser-history": "^0.1.1",
@@ -29,6 +30,7 @@
     "eslint": "^2.10.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-react": "^5.1.1",
+    "expect": "^1.20.1",
     "glob": "^7.0.3",
     "pre-commit": "^1.1.3",
     "redbox-react": "^1.2.2"
@@ -39,6 +41,7 @@
   "scripts": {
     "start": "dora --plugins 'proxy,webpack,webpack-hmr,livereload?enableJs=false&injectHost=localhost,browser-history?index=/src/entries/index.html'",
     "build": "atool-build",
-    "lint": "eslint --ext .js,.jsx src/"
+    "lint": "eslint --ext .js,.jsx src/",
+    "test": "atool-test-mocha ./src/**/__tests__/*-test.js"
   }
 }
