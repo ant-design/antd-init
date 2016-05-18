@@ -2,7 +2,7 @@
   "private": true,
   "entry": {},
   "dependencies": {
-    "antd": "^1.0.1",
+    "antd": "^1.1.0",
     "atool-build": "^0.7.1",
     "babel-plugin-antd": "^0.4.0",
     "babel-plugin-transform-runtime": "^6.8.0",
