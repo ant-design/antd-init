@@ -21,7 +21,7 @@ const MainLayout = ({ children }) => {
         </div>
       </div>
       <div className={styles.foot}>
-        Built with redux, react and antd.
+        Built with react, react-router, redux, redux-saga, ant-tool, css-modules, antd...
       </div>
     </div>
   );
