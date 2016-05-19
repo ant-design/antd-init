@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import { DatePicker } from 'antd';
-import styles from './App.less';
+import React, { Component, PropTypes } from 'react';
+import Todos from './Todos/Todos';
+import MainLayout from '../layouts/MainLayout/MainLayout';
 
-export default class App extends Component {
-
-  render() {
-    return (
-      <div className={styles.normal}>
-        <DatePicker style={{ margin: 20 }} />
-      </div>
-    );
-  }
+const App = ({ location }) => {
+  return (
+    <MainLayout>
+      <Todos location={location} />
+    </MainLayout>
+  );
 };
 
+App.propTypes = {
+};
+
+export default App;

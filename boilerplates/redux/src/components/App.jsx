@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
 import Todos from './Todos/Todos';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
@@ -14,4 +13,4 @@ const App = ({ location }) => {
 App.propTypes = {
 };
 
-export default connect()(App);
+export default App;

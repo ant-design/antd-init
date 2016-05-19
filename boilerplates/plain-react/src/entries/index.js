@@ -1,6 +1,9 @@
+import './index.html';
+import './index.less';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import { browserHistory } from 'react-router';
 import App from '../components/App';
-import './index.html';
+import Routes from '../routes/index';
 
-ReactDOM.render(<App />, document.getElementById('react-content'));
+ReactDOM.render(<Routes history={browserHistory} />, document.getElementById('root'));
