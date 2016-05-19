@@ -3,7 +3,7 @@
   "entry": {
   },
   "dependencies": {
-    "antd": "~1.0.0",
+    "antd": "^1.1.0",
     "atool-build": "0.7.x",
     "babel-plugin-antd": "0.4.x",
     "babel-plugin-transform-runtime": "^6.8.0",

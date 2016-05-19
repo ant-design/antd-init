@@ -3,7 +3,7 @@
     "index": "./index.jsx"
   },
   "dependencies": {
-    "antd": "~1.0.0",
+    "antd": "^1.1.0",
     "atool-build": "0.7.x",
     "babel-plugin-antd": "0.4.x",
     "es3ify-loader": "^0.2.0",
