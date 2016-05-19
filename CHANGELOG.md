@@ -2,6 +2,15 @@
 
 ---
 
+## 1.1.0
+
+- Upgrade antd to 1.1.0
+- Add redux boilplate, [!25](https://github.com/ant-design/antd-init/pull/25)
+
+## 1.0.0
+
+- Upgrade antd to 1.0.0
+
 ## 0.8.0
 
 - 支持 CSS 的 livereload
