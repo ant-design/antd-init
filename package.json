@@ -1,13 +1,13 @@
 {
   "name": "antd-init",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Ant Design boilerplate generator.",
   "repository": {
     "type": "git",
     "url": "https://github.com/ant-design/antd-init"
   },
   "homepage": "https://github.com/ant-design/antd-init",
-  "mai": "chencheng <sorrycc@gmail.com>",
+  "mail": "chencheng <sorrycc@gmail.com>",
   "license": "MIT",
   "bin": {
     "antd-init": "./bin/antd-init"
@@ -16,6 +16,7 @@
     "test": "mocha --no-timeouts"
   },
   "dependencies": {
+    "inquirer": "^1.0.0",
     "through2": "2.0.x",
     "vinyl-fs": "^2.4.3",
     "which": "1.2.x"

@@ -1,7 +1,7 @@
 .idea
 .DS_Store
 tmp
-spm_modules
 node_modules
 examples/**/dist
 boilerplate/dist
+*.log

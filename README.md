@@ -11,7 +11,7 @@
 - Generate a webpack workflow based boilerplate.
 - support ES2015 and less.
 - Local development via [dora](https://github.com/dora-js/dora), support proxy, HMR and unit test.
-- support custom webpack.config，[examples](./boilerplate/webpack.config.js).
+- support custom webpack.config，[examples](./boilerplate/redux/webpack.config.js).
 
 More usage: http://ant-tool.github.io/
 
@@ -28,6 +28,10 @@ Generate boilerplate.
 ```bash
 $ mkdir foo && cd foo
 $ antd-init
+
+// or with specify type
+$ antd-init --type plain-react
+$ antd-init --type redux
 ```
 
 Start development server.
@@ -40,4 +44,16 @@ Build.
 
 ```bash
 $ npm run build
+```
+
+Test.
+
+```bash
+$ npm test
+```
+
+Lint.
+
+```bash
+$ npm run lint
 ```
