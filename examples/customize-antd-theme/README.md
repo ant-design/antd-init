@@ -8,7 +8,7 @@
 
 ```bash
 $ npm install
-$ npm run dev
+$ npm start
 ```
 
 然后访问 http://127.0.0.1:8989/。

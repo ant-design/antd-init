@@ -10,7 +10,7 @@ Ant Design 默认的 iconfont 文件托管在 [iconfont.cn](http://iconfont.cn/)
 
 ```bash
 $ npm install
-$ npm run dev
+$ npm start
 ```
 
 然后访问 http://127.0.0.1:8989/。
