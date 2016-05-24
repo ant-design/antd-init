@@ -63,36 +63,36 @@ $ npm run lint
 Since IE8 is don't supported in main react community, you should do follow steps to make it work: 
 
 1. Open `package.json`
-
-Modify dependency version.
-
-```diff
-- "react": "^15.0.2",
-- "react-dom": "^15.0.2",
-- "react-router": "^2.0.1",
-+ "react": "0.14.x",
-+ "react-dom": "0.14.x",
-+ "react-router": "2.3.x"
-```
-
-Remove hmr plugin.
-
-```diff
-- "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
-+ "start": "dora -p 8001 --plugins \"webpack,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
-```
+  
+  Modify dependency version.
+  
+  ```diff
+  - "react": "^15.0.2",
+  - "react-dom": "^15.0.2",
+  - "react-router": "^2.0.1",
+  + "react": "0.14.x",
+  + "react-dom": "0.14.x",
+  + "react-router": "2.3.x"
+  ```
+  
+  Remove hmr plugin.
+  
+  ```diff
+  - "start": "dora -p 8001 --plugins   \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
+  + "start": "dora -p 8001 --plugins   \"webpack,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
+  ```
 
 2. Open `webpack.config.js`, and enable es3ify-loader
 
-```diff
-// Enable this if you have to support IE8.
-- // webpackConfig.module.loaders.unshift({
-- //   test: /\.jsx?$/,
-- //   loader: 'es3ify-loader',
-- // });
-+ webpackConfig.module.loaders.unshift({
-+   test: /\.jsx?$/,
-+   loader: 'es3ify-loader',
-+ });
-```
+  ```diff
+  // Enable this if you have to support IE8.
+  - // webpackConfig.module.loaders.unshift({
+  - //   test: /\.jsx?$/,
+  - //   loader: 'es3ify-loader',
+  - // });
+  + webpackConfig.module.loaders.unshift({
+  +   test: /\.jsx?$/,
+  +   loader: 'es3ify-loader',
+  + });
+  ```
 
