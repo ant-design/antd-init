@@ -61,3 +61,5 @@ $ npm start
    @import "~antd/lib/style/core/index.less";
    @import "~antd/lib/style/components.less";
    ```
+
+> 注：antd-init 默认的 webpack.config.js 会影响此方法，请参照本例的 webpack.config.js 进行改造：去掉 babel-plugin-antd 和 `Parse all less files as css module.` 的配置。
