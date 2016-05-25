@@ -46,7 +46,7 @@
   "scripts": {
     "build": "atool-build",
     "lint": "eslint --ext .js,.jsx src/",
-    "start": "dora --plugins 'proxy,webpack,webpack-hmr,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html'",
+    "start": "dora --plugins \"proxy,webpack,webpack-hmr,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
     "test": "atool-test-mocha ./src/**/__tests__/*-test.js"
   }
 }
