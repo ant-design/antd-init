@@ -13,6 +13,7 @@
     "react-dom": "^15.0.2"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.0",
     "dora": "0.3.x",
     "dora-plugin-browser-history": "^0.1.1",
     "dora-plugin-hmr": "0.6.x",
@@ -22,8 +23,8 @@
     "eslint": "2.x",
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
-    "pre-commit": "1.x",
-    "babel-eslint": "^6.0.0"
+    "glob": "^7.0.3",
+    "pre-commit": "1.x"
   },
   "pre-commit": [
     "lint"
