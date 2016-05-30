@@ -5,7 +5,7 @@ import App from '../components/App';
 import NotFound from '../components/NotFound';
 import Todos from '../components/Todos/Todos';
 
-import Example from '../components/Example';
+import Example from '../components/Example/Example';
 import TableList from '../components/Example/TableList/TableList';
 
 // https://github.com/reactjs/react-router

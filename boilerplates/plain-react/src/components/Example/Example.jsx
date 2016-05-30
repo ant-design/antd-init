@@ -1,4 +1,4 @@
-import styles from './Index.less';
+import styles from './Example.less';
 import React, { Component, PropTypes } from 'react';
 import Sidebar from './Sidebar';
 
