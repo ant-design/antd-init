@@ -1,8 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { Spin } from 'antd';
+import { Link } from 'react-router';
 import Todo from './Todo';
 import styles from './Todos.less';
 import { getAll } from '../../services/todos';
+
+function filter(todos, pathname) {
+  const newList = todos.list.filter(todo => {
+    if (pathname === '/todo/actived') {
+      return !todo.isComplete;
+    }
+    if (pathname === '/todo/completed') {
+      return todo.isComplete;
+    }
+    return true;
+  });
+  return { ...todos, list: newList };
+}
 
 class TodosContainer extends Component {
 
@@ -12,6 +26,10 @@ class TodosContainer extends Component {
       list: [],
       loading: false,
     };
+  }
+
+  componentDidMount() {
+    this.loadTodos();
   }
 
   loadTodos() {
@@ -28,17 +46,12 @@ class TodosContainer extends Component {
     const newList = this.state.list.map(todo => {
       if (id === todo.id) {
         return { ...todo, isComplete: !todo.isComplete };
-      } else {
-        return todo;
       }
+      return todo;
     });
     this.setState({
       list: newList,
     });
-  }
-
-  componentDidMount() {
-    this.loadTodos();
   }
 
   render() {
@@ -46,7 +59,14 @@ class TodosContainer extends Component {
     const { list, loading } = this.state;
     const todos = filter({ list, loading }, location.pathname);
     return (
-      <Todos todos={todos} onToggleComplete={this.handleToggleComplete} />
+      <div>
+        <div>
+          <Link to="/todo">All</Link><br />
+          <Link to="/todo/actived">Actived</Link><br />
+          <Link to="/todo/completed">Completed</Link><br />
+        </div>
+        <Todos todos={todos} onToggleComplete={this.handleToggleComplete} />
+      </div>
     );
   }
 }
@@ -78,18 +98,5 @@ const Todos = ({ todos, onToggleComplete }) => {
 };
 
 Todos.propTypes = {};
-
-function filter(todos, pathname) {
-  const newList = todos.list.filter(todo => {
-    if (pathname === '/actived') {
-      return !todo.isComplete;
-    }
-    if (pathname === '/completed') {
-      return todo.isComplete;
-    }
-    return true;
-  });
-  return { ...todos, list: newList };
-}
 
 export default TodosContainer;
