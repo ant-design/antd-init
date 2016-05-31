@@ -9,3 +9,24 @@ export async function getData(params) {
     body: qs.stringify(params),
   });
 }
+
+export async function addItem(params) {
+  return xFetch('/api/tablelist_addItem', {
+    method: 'post',
+    body: qs.stringify(params),
+  });
+}
+
+export async function deleteItem(params) {
+  return xFetch('/api/tablelist_deleteItem', {
+    method: 'post',
+    body: qs.stringify(params),
+  });
+}
+
+export async function editItem(params) {
+  return xFetch('/api/tablelist_editItem', {
+    method: 'post',
+    body: qs.stringify(params),
+  });
+}

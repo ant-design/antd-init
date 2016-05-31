@@ -7,7 +7,7 @@ const Sidebar = ({ styles }) => {
     <div className={ styles.sidebar }>
       <Menu className={ styles.menu } mode="vertical">
         <Menu.Item key="table">
-          <Link to="/example/tableList">Table</Link>
+          <Link to="/example/tableList">表格样例</Link>
         </Menu.Item>
       </Menu>
     </div>

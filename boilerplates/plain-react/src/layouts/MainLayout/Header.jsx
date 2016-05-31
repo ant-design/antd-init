@@ -12,7 +12,6 @@ function getMenuKeyFromUrl(pathname) {
 }
 
 class Header extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +42,6 @@ class Header extends Component {
       </Menu>
     );
   }
-
 }
 
 export default Header;
