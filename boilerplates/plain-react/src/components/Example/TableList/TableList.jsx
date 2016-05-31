@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Table, Icon, Popconfirm, Modal } from 'antd';
 
-import assign from 'object-assign';
-
 import SearchForm from './SearchForm';
 import EditModal from './EditModal';
 
@@ -32,7 +30,10 @@ class TableList extends Component {
           loading: true,
         });
 
-        getData({ currentPage: current, pageSize: 10 }).then(({ jsonResult }) => {
+        getData({
+          currentPage: current,
+          pageSize: 10,
+        }).then(({ jsonResult }) => {
           this.setState({
             data: jsonResult.data,
             page: jsonResult.page,
@@ -60,7 +61,7 @@ class TableList extends Component {
       key: 'operation',
       render: (text, record) => (
         <p>
-          <a onClick={this.handleOpenModal.bind(this, record)}>编辑</a>
+          <a onClick={this.handleModalOpen.bind(this, record)}>编辑</a>
           &nbsp;
           <Popconfirm title="确定要删除吗？" onConfirm={this.handleDelete.bind(this, record)}>
             <a>删除</a>
@@ -71,7 +72,10 @@ class TableList extends Component {
   }
 
   componentDidMount() {
-    getData({ currentPage: 1, pageSize: 10 }).then(({ jsonResult }) => {
+    getData({
+      currentPage: 1,
+      pageSize: 10,
+    }).then(({ jsonResult }) => {
       this.setState({
         data: jsonResult.data,
         page: jsonResult.page,
@@ -136,7 +140,7 @@ class TableList extends Component {
     });
   }
 
-  handleOpenModal = (record) => {
+  handleModalOpen = (record) => {
     this.setState({
       modalVisible: true,
       currentItem: { ...record },
@@ -164,10 +168,11 @@ class TableList extends Component {
       />
     };
 
-    this.pagination = assign(this.pagination, {
+    this.pagination = {
+      ...this.pagination,
       total: this.state.page.total,
       current: this.state.page.current,
-    });
+    };
 
     return <div style={{ margin: '20px' }}>
       <SearchForm onSearch={ this.handleSearch } onAdd={ this.handleAdd } />

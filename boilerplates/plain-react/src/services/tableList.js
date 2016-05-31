@@ -4,10 +4,7 @@ import qs from 'qs';
 
 export async function getData(params) {
   // You can replace xFetch to other ajax library
-  return xFetch('/api/tablelist', {
-    method: 'post',
-    body: qs.stringify(params),
-  });
+  return xFetch(`/api/tablelist?${qs.stringify(params)}`);
 }
 
 export async function addItem(params) {

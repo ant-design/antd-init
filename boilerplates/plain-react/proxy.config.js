@@ -62,12 +62,13 @@ module.exports = {
 
   '/api/tablelist': function (req, res) {
 
-    var page = qs.parse(req.body);
+    var page = qs.parse(req.query);
     var pageSize = page.pageSize || 10;
+    var currentPage = page.currentPage || 1;
 
-    var data = tableListData.data.slice((page.currentPage - 1) * pageSize, page.currentPage * pageSize);
+    var data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-    tableListData.page.current = page.currentPage*1;
+    tableListData.page.current = currentPage*1;
 
     setTimeout(function () {
       res.json({
