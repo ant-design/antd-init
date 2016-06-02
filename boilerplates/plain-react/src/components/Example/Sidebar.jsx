@@ -1,8 +1,9 @@
+import styles from './Sidebar.less';
 import React, { Component } from 'react';
 import { Menu } from 'antd';
 import { Link } from 'react-router';
 
-const Sidebar = ({ styles }) => {
+const Sidebar = () => {
   return (
     <div className={ styles.sidebar }>
       <Menu className={ styles.menu } mode="vertical">

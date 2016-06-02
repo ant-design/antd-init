@@ -3,35 +3,32 @@
 'use strict';
 
 var qs = require('qs');
+const mockjs = require('mockjs');
 
 // 数据持久
 var tableListData = {};
-if (!global._o_x_tableListData) {
+if (!global.tableListData) {
 
-  var data = [];
-
-  for (var i = 0; i < 100; i++) {
-    data.push({
-      key: i,
-      name: '胡彦斌' + i,
-      age: 32,
-      address: '西湖区湖底公园' + i + '号',
-    });
-  }
-
-  tableListData = {
-    data: data,
+  var data = mockjs.mock({
+    'data|100': [{
+      'key|+1': 1,
+      name: '@cname',
+      'age|11-99': 1,
+      address: '@region',
+    }],
     page: {
-      total: data.length,
+      total: 100,
       current: 1,
-    }
-  };
+    },
+  });
 
-  global._o_x_tableListData = tableListData;
+  tableListData = data;
+
+  global.tableListData = tableListData;
 
 } else {
 
-  tableListData = global._o_x_tableListData;
+  tableListData = global.tableListData;
 
 }
 
@@ -88,7 +85,7 @@ module.exports = {
 
       tableListData.page.total = tableListData.data.length;
 
-      global._o_x_tableListData = tableListData;
+      global.tableListData = tableListData;
       res.json({
         success: true,
         data: tableListData.data,
@@ -111,7 +108,7 @@ module.exports = {
 
       tableListData.page.total = tableListData.data.length;
 
-      global._o_x_tableListData = tableListData;
+      global.tableListData = tableListData;
       res.json({
         success: true,
         data: tableListData.data,
@@ -131,7 +128,7 @@ module.exports = {
         return item;
       });
 
-      global._o_x_tableListData = tableListData;
+      global.tableListData = tableListData;
       res.json({
         success: true,
         data: tableListData.data,

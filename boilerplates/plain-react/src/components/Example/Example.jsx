@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 const Index = ({ children, location }) => {
   return (
     <div>
-      <Sidebar location={location} styles={styles} />
+      <Sidebar location={location} />
       <div className={styles.content}>
         {children}
       </div>

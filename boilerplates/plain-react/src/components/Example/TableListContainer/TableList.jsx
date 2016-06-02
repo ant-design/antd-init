@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Table, Icon, Popconfirm, Modal } from 'antd';
+import { Table, Icon, Popconfirm, Modal, message } from 'antd';
 
 import SearchForm from './SearchForm';
 import EditModal from './EditModal';
@@ -104,6 +104,7 @@ class TableList extends Component {
     });
 
     addItem(formData).then(({ jsonResult }) => {
+      message.success('添加成功');
       this.setState({
         data: jsonResult.data,
         page: jsonResult.page,

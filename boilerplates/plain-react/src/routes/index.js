@@ -6,7 +6,7 @@ import NotFound from '../components/NotFound';
 import Todos from '../components/Todos/Todos';
 
 import Example from '../components/Example/Example';
-import TableList from '../components/Example/TableList/TableList';
+import TableList from '../components/Example/TableListContainer/TableList';
 
 // https://github.com/reactjs/react-router
 const Routes = ({ history }) =>

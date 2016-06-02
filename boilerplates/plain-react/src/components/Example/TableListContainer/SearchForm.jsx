@@ -3,13 +3,6 @@ import { Form, Input, Button } from 'antd';
 const FormItem = Form.Item;
 
 class SearchForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalVisible: false,
-    };
-  }
-
   checkNumber(rule, value, callback) {
     if (!/^[\d]{1,2}$/.test(value)) {
       callback(new Error('年龄不合法'));
