@@ -38,6 +38,7 @@ const TableList  = ({
         columns={ columns }
         dataSource={ dataSource }
         loading={ loading }
+        rowKey={record => record.key}
         pagination={ false }
       />
       <Pagination

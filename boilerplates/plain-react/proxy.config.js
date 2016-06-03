@@ -57,7 +57,7 @@ module.exports = {
     }, 500);
   },
 
-  '/api/tablelist': function (req, res) {
+  'GET /api/tablelist': function (req, res) {
 
     const page = qs.parse(req.query);
     const pageSize = page.pageSize || 10;
@@ -82,11 +82,11 @@ module.exports = {
     }, 300);
   },
 
-  '/api/tablelist/create': function (req, res) {
+  'POST /api/tablelist': function (req, res) {
     setTimeout(function () {
       const newData = qs.parse(req.body);
 
-      newData.key = tableListData.data.length + 1;
+      newData.key = String(+new Date);
       tableListData.data.unshift(newData);
 
       tableListData.page.total = tableListData.data.length;
@@ -101,7 +101,7 @@ module.exports = {
 
   },
 
-  '/api/tablelist/delete': function (req, res) {
+  'DELETE /api/tablelist': function (req, res) {
     setTimeout(function () {
       const deleteItem = qs.parse(req.body);
 
@@ -123,7 +123,7 @@ module.exports = {
     }, 500);
   },
 
-  '/api/tablelist/edit': function (req, res) {
+  'PUT /api/tablelist': function (req, res) {
     setTimeout(function () {
       const editItem = qs.parse(req.body);
 

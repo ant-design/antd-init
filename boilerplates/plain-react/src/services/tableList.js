@@ -8,22 +8,22 @@ export async function getData(params) {
 }
 
 export async function addItem(params) {
-  return xFetch('/api/tablelist/create', {
+  return xFetch('/api/tablelist', {
     method: 'post',
     body: qs.stringify(params),
   });
 }
 
 export async function deleteItem(params) {
-  return xFetch('/api/tablelist/delete', {
-    method: 'post',
+  return xFetch('/api/tablelist', {
+    method: 'delete',
     body: qs.stringify(params),
   });
 }
 
 export async function editItem(params) {
-  return xFetch('/api/tablelist/edit', {
-    method: 'post',
+  return xFetch('/api/tablelist', {
+    method: 'put',
     body: qs.stringify(params),
   });
 }
