@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { Table, Icon, Popconfirm, Modal, message } from 'antd';
-
+import { message } from 'antd';
 import SearchForm from './SearchForm';
-import EditModal from './EditModal';
-
+import TableItemModal from './TableItemModal';
+import TableList from './TableList';
 import { getData, addItem, deleteItem, editItem } from '../../../services/tableList';
+import styles from './TableListContainer.less';
 
-class TableList extends Component {
+class TableListContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -14,6 +14,7 @@ class TableList extends Component {
       data: [],
       loading: true,
       modalVisible: false,
+      modalType: 'create',
       currentItem: {},
       page: {
         total: 0,
@@ -39,39 +40,12 @@ class TableList extends Component {
             page: jsonResult.page,
             loading: false,
           });
-        })
+        });
       },
     };
-
-    this.columns = [{
-      title: '姓名',
-      dataIndex: 'name',
-      key: 'name',
-      render: (text) => <a href="#">{ text }</a>,
-    }, {
-      title: '年龄',
-      dataIndex: 'age',
-      key: 'age',
-    }, {
-      title: '住址',
-      dataIndex: 'address',
-      key: 'address',
-    }, {
-      title: '操作',
-      key: 'operation',
-      render: (text, record) => (
-        <p>
-          <a onClick={this.handleModalOpen.bind(this, record)}>编辑</a>
-          &nbsp;
-          <Popconfirm title="确定要删除吗？" onConfirm={this.handleDelete.bind(this, record)}>
-            <a>删除</a>
-          </Popconfirm>
-        </p>
-      ),
-    }];
   }
 
-  componentDidMount() {
+  componentWillMount() {
     getData({
       currentPage: 1,
       pageSize: 10,
@@ -81,7 +55,7 @@ class TableList extends Component {
         page: jsonResult.page,
         loading: false,
       });
-    })
+    });
   }
 
   handleSearch = (formData) => {
@@ -98,13 +72,13 @@ class TableList extends Component {
     });
   }
 
-  handleAdd = (formData) => {
+  handleDelete = (record) => {
     this.setState({
       loading: true,
     });
 
-    addItem(formData).then(({ jsonResult }) => {
-      message.success('添加成功');
+    deleteItem(record).then(({ jsonResult }) => {
+      message.success('删除成功');
       this.setState({
         data: jsonResult.data,
         page: jsonResult.page,
@@ -113,12 +87,14 @@ class TableList extends Component {
     });
   }
 
-  handleDelete = (record) => {
+  handleCreate = (formData) => {
     this.setState({
       loading: true,
+      modalVisible: false,
     });
 
-    deleteItem(record).then(({ jsonResult }) => {
+    addItem(formData).then(({ jsonResult }) => {
+      message.success('添加成功');
       this.setState({
         data: jsonResult.data,
         page: jsonResult.page,
@@ -134,6 +110,7 @@ class TableList extends Component {
     });
 
     editItem(formData).then(({ jsonResult }) => {
+      message.success('编辑成功');
       this.setState({
         data: jsonResult.data,
         loading: false,
@@ -141,31 +118,34 @@ class TableList extends Component {
     });
   }
 
-  handleModalOpen = (record) => {
-    this.setState({
-      modalVisible: true,
-      currentItem: { ...record },
-    });
-  }
-
-  handleModalCancel = () => {
+  handleModalHide = () => {
     this.setState({
       modalVisible: false,
     });
   }
 
+  handleModalShow = (modalType, currentItem) => {
+    this.setState({
+      modalVisible: true,
+      modalType,
+      currentItem,
+    });
+  }
+
   render() {
-    const { state, handleEdit, handleModalCancel } = this;
+    const { state } = this;
 
     // 解决 Form.create initialValue 的问题
     // 每次创建一个全新的组件, 而不做diff
     // 如果你使用了redux, 请移步 http://react-component.github.io/form/examples/redux.html
-    const OneEditModal = () => {
-      return <EditModal
+    const TableItemModalGen = () => {
+      return <TableItemModal
         item={ state.currentItem }
         visible={ state.modalVisible }
-        onOk={ handleEdit }
-        onCancel={ handleModalCancel }
+        onCreate={ this.handleCreate }
+        onEdit={ this.handleEdit }
+        onCancel={ this.handleModalHide }
+        type={ state.modalType }
       />
     };
 
@@ -175,17 +155,21 @@ class TableList extends Component {
       current: this.state.page.current,
     };
 
-    return <div style={{ margin: '20px' }}>
-      <SearchForm onSearch={ this.handleSearch } onAdd={ this.handleAdd } />
-      <Table
-        columns={ this.columns }
+    return <div className={styles.normal}>
+      <TableItemModalGen />
+      <SearchForm
+        onSearch={ this.handleSearch }
+        onShowCreateModal={ this.handleModalShow.bind(this, 'create') }
+      />
+      <TableList
         dataSource={ this.state.data }
         loading={ this.state.loading }
         pagination={ this.pagination }
+        onShowEditModal={ this.handleModalShow.bind(this, 'edit') }
+        onDelete={ this.handleDelete }
       />
-      <OneEditModal />
     </div>;
   }
 }
 
-export default TableList;
+export default TableListContainer;

@@ -63,9 +63,15 @@ module.exports = {
     const pageSize = page.pageSize || 10;
     const currentPage = page.currentPage || 1;
 
-    const data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+    let data = tableListData.data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
     tableListData.page.current = currentPage * 1;
+
+    if (page.field) {
+      data = data.filter(function(item) {
+        return item[page.field].indexOf(page.keyword) > -1;
+      });
+    }
 
     setTimeout(function () {
       res.json({
@@ -81,7 +87,7 @@ module.exports = {
       const newData = qs.parse(req.body);
 
       newData.key = tableListData.data.length + 1;
-      tableListData.data.push(newData);
+      tableListData.data.unshift(newData);
 
       tableListData.page.total = tableListData.data.length;
 
