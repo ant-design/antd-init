@@ -20,7 +20,6 @@
     "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^6.0.0",
     "dora": "0.3.x",
-    "dora-plugin-browser-history": "^0.1.1",
     "dora-plugin-hmr": "0.6.x",
     "dora-plugin-livereload": "0.3.x",
     "dora-plugin-proxy": "0.6.x",
@@ -40,7 +39,7 @@
   "scripts": {
     "build": "atool-build",
     "lint": "eslint --ext .js,.jsx src",
-    "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
+    "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1\"",
     "test": "atool-test-mocha ./src/**/__tests__/*-test.js"
   }
 }
