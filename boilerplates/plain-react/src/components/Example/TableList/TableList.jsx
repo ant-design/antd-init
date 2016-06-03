@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { Table, Icon, Popconfirm, Modal, message } from 'antd';
+import { Table, Icon, Popconfirm, Modal, Pagination, message } from 'antd';
 
-const TableList  = ({ pagination, loading, dataSource, onShowEditModal, onDelete }) => {
+const TableList  = ({
+  onPageChange, total, current, loading, dataSource, onShowEditModal, onDelete
+}) => {
 
   const columns = [{
     title: '姓名',
@@ -30,12 +32,23 @@ const TableList  = ({ pagination, loading, dataSource, onShowEditModal, onDelete
     ),
   }];
 
-  return <Table
-    columns={ columns }
-    dataSource={ dataSource }
-    loading={ loading }
-    pagination={ pagination }
-  />;
+  return (
+    <div>
+      <Table
+        columns={ columns }
+        dataSource={ dataSource }
+        loading={ loading }
+        pagination={ false }
+      />
+      <Pagination
+        className="ant-table-pagination"
+        total={ total }
+        current={ current }
+        pageSize={ 10 }
+        onChange={ onPageChange }
+      />
+    </div>
+  );
 
 };
 

@@ -21,34 +21,24 @@ class TableListContainer extends Component {
         current: 0,
       },
     };
-
-    this.pagination = {
-      total: this.state.page.total,
-      current: this.state.page.current,
-      pageSize: 10,
-      onChange: (current) => {
-        this.setState({
-          loading: true,
-        });
-
-        getData({
-          currentPage: current,
-          pageSize: 10,
-        }).then(({ jsonResult }) => {
-          this.setState({
-            data: jsonResult.data,
-            page: jsonResult.page,
-            loading: false,
-          });
-        });
-      },
-    };
   }
 
   componentWillMount() {
     getData({
       currentPage: 1,
       pageSize: 10,
+    }).then(({ jsonResult }) => {
+      this.setState({
+        data: jsonResult.data,
+        page: jsonResult.page,
+        loading: false,
+      });
+    });
+  }
+
+  handlePageChange = (currentPage) => {
+    getData({
+      currentPage,
     }).then(({ jsonResult }) => {
       this.setState({
         data: jsonResult.data,
@@ -149,12 +139,6 @@ class TableListContainer extends Component {
       />
     };
 
-    this.pagination = {
-      ...this.pagination,
-      total: this.state.page.total,
-      current: this.state.page.current,
-    };
-
     return <div className={styles.normal}>
       <TableItemModalGen />
       <SearchForm
@@ -165,6 +149,9 @@ class TableListContainer extends Component {
         dataSource={ this.state.data }
         loading={ this.state.loading }
         pagination={ this.pagination }
+        total={ this.state.page.total }
+        current={ this.state.page.current }
+        onPageChange={ this.handlePageChange }
         onShowEditModal={ this.handleModalShow.bind(this, 'edit') }
         onDelete={ this.handleDelete }
       />
