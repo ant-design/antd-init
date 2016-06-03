@@ -2,15 +2,14 @@ import React, { Component, PropTypes } from 'react';
 import Todos from './Todos/Todos';
 import MainLayout from '../layouts/MainLayout/MainLayout';
 
-const App = ({ location }) => {
+const App = ({ children, location }) => {
   return (
-    <MainLayout>
-      <Todos location={location} />
+    <MainLayout location={location}>
+      {children}
     </MainLayout>
   );
 };
 
-App.propTypes = {
-};
+App.propTypes = {};
 
 export default App;

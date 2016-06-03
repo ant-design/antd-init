@@ -25,12 +25,14 @@
     "dora-plugin-livereload": "0.3.x",
     "dora-plugin-proxy": "0.6.x",
     "dora-plugin-webpack": "0.6.x",
-    "expect": "^1.20.1",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "6.x",
     "eslint-plugin-react": "4.x",
+    "expect": "^1.20.1",
     "glob": "^7.0.3",
-    "pre-commit": "1.x"
+    "mockjs": "^1.0.1-beta2",
+    "pre-commit": "1.x",
+    "qs": "^6.2.0"
   },
   "pre-commit": [
     "lint"

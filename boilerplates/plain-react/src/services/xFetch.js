@@ -35,7 +35,6 @@ function xFetch(url, options) {
     ...opts.headers,
     authorization: cookie.get('authorization') || '',
   };
-
   return fetch(url, opts)
     .then(check401)
     .then(check404)
