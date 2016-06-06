@@ -6,7 +6,7 @@ import NotFound from '../components/NotFound';
 import Todos from '../components/Todos/Todos';
 
 import Example from '../components/Example/Example';
-import TableList from '../components/Example/TableListContainer/TableList';
+import TableListContainer from '../components/Example/TableList/TableListContainer';
 
 // https://github.com/reactjs/react-router
 const Routes = ({ history }) =>
@@ -14,8 +14,8 @@ const Routes = ({ history }) =>
 
     <Route path="/" component={App}>
       <Route path="/example" component={Example}>
-        <Route path="/example/tableList" component={TableList} />
-        <IndexRoute component={TableList} />
+        <Route path="/example/tableList" component={TableListContainer} />
+        <IndexRoute component={TableListContainer} />
       </Route>
 
       <Route path="/todo" component={Todos} />
