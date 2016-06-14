@@ -14,35 +14,13 @@ if (process.argv.length === 3 &&
   return;
 }
 
-if (process.argv.length === 4 && process.argv[2] === '--type') {
-  init(process.argv[3]);
-  return;
-}
-
-inquirer.prompt({
-    name: 'type',
-    type: 'list',
-    message: 'Please select boilerplate type',
-    choices: [
-      {
-        name: 'plain react - for simple project',
-        value: 'plain-react',
-      },
-      {
-        name: 'redux - for complex project',
-        value: 'redux',
-      },
-    ],
-  })
-  .then(function(answers) {
-    init(answers.type);
-  });
+init('redux');
 
 function init(type) {
   var cwd = join(__dirname, '../boilerplates', type);
   var dest = process.cwd();
 
-  vfs.src('**/*', {cwd: cwd, cwdbase: true, dot: true})
+  vfs.src(['**/*', '!node_modules/**/*'], {cwd: cwd, cwdbase: true, dot: true})
     .pipe(template(dest))
     .pipe(vfs.dest(dest))
     .on('end', function() {
