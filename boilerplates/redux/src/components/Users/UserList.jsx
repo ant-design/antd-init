@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Table, Icon, Popconfirm, Modal, Pagination, message } from 'antd';
 
-const TableList  = ({
+function UserList({
   onPageChange, total, current, loading, dataSource, onShowEditModal, onDelete
-}) => {
+}) {
 
   const columns = [{
     title: '姓名',
@@ -38,7 +38,7 @@ const TableList  = ({
         columns={ columns }
         dataSource={ dataSource }
         loading={ loading }
-        rowKey={record => record.key}
+        rowKey={record => record.id}
         pagination={ false }
       />
       <Pagination
@@ -51,6 +51,6 @@ const TableList  = ({
     </div>
   );
 
-};
+}
 
-export default TableList;
+export default UserList;

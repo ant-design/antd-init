@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { Form, Input, Modal } from 'antd';
 const FormItem = Form.Item;
 
-import { getData, addItem, deleteItem } from '../../../services/tableList';
-
 const formItemLayout = {
   labelCol: {
     span: 6,
@@ -13,7 +11,7 @@ const formItemLayout = {
   },
 };
 
-const TableItemModal = ({ onCreate, onEdit, onCancel, visible, form, item = {}, type }) => {
+function UserModal({ onCreate, onEdit, onCancel, visible, form, item = {}, type }) {
   const { getFieldProps } = form;
 
   const handleOk = () => {
@@ -49,7 +47,7 @@ const TableItemModal = ({ onCreate, onEdit, onCancel, visible, form, item = {}, 
   };
 
   const modalOpts = {
-    title: '修改元素',
+    title: '修改用户',
     visible,
     onOk: handleOk,
     onCancel,
@@ -82,9 +80,9 @@ const TableItemModal = ({ onCreate, onEdit, onCancel, visible, form, item = {}, 
       </Form>
     </Modal>
   );
+}
+
+UserModal.propTypes = {
 };
 
-TableItemModal.propTypes = {
-};
-
-export default Form.create()(TableItemModal);
+export default Form.create()(UserModal);

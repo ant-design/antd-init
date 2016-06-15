@@ -22,7 +22,6 @@ const enhancer = compose(
 const store = createStore(combineReducers({
   ...reducers, routing,
 }), initialState, enhancer);
-SagaManager.startSagas(sagaMiddleware);
 
 if (module.hot) {
   module.hot.accept('../reducers', () => {
@@ -70,3 +69,13 @@ if (module.hot) {
 }
 
 render();
+SagaManager.startSagas(sagaMiddleware);
+
+//hashHistory.listen(location => {
+//  if (location.action === 'POP') {
+//    store.dispatch({
+//      type: 'users/query',
+//      payload: location.query,
+//    });
+//  }
+//});
