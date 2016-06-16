@@ -2,8 +2,6 @@
 // - https://github.com/ant-tool/atool-build#配置扩展
 
 const webpack = require('atool-build/lib/webpack');
-const fs = require('fs');
-const path = require('path');
 
 module.exports = function(webpackConfig) {
   webpackConfig.babel.plugins.push('transform-runtime');

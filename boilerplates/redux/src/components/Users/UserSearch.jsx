@@ -2,19 +2,31 @@ import React, { Component, PropTypes } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import styles from './UserSearch.less';
 
-function UserSearch({ onShowCreateModal, onSearch, form, field, keyword }) {
+function UserSearch({ dispatch, form, field, keyword }) {
 
   const { getFieldProps, validateFields, getFieldsValue } = form;
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
     validateFields((errors) => {
       if (!!errors) {
         return;
       }
-      onSearch(getFieldsValue());
+      dispatch({
+        type: 'users/query',
+        payload: getFieldsValue(),
+      });
     });
-  };
+  }
+
+  function handleShowCreateModal() {
+    dispatch({
+      type: 'users/showModal',
+      payload: {
+        modalType: 'create',
+      },
+    });
+  }
 
   const keywordRules = [
     {
@@ -43,7 +55,7 @@ function UserSearch({ onShowCreateModal, onSearch, form, field, keyword }) {
         </Form>
       </div>
       <div className={styles.create}>
-        <Button type="ghost" onClick={onShowCreateModal}>添加</Button>
+        <Button type="ghost" onClick={handleShowCreateModal}>添加</Button>
       </div>
     </div>
   );

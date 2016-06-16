@@ -69,6 +69,10 @@ if (module.hot) {
 }
 
 render();
+
+//////////////////////
+// Init
+
 SagaManager.startSagas(sagaMiddleware);
 
 hashHistory.listen(location => {

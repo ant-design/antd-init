@@ -11,46 +11,51 @@ const formItemLayout = {
   },
 };
 
-function UserModal({ onCreate, onEdit, onCancel, visible, form, item = {}, type }) {
+function UserModal({ dispatch, visible, form, item = {}, type }) {
   const { getFieldProps } = form;
 
-  const handleOk = () => {
+  function handleCancel() {
+    dispatch({
+      type: 'users/hideModal',
+    });
+  }
+
+  function handleOk() {
     form.validateFields((errors) => {
       if (errors) {
         return;
       }
 
       const data = { ...form.getFieldsValue(), key: item.key };
-      if (type === 'create') {
-        onCreate(data);
-      } else {
-        onEdit(data);
-      }
+      dispatch({
+        type: `users/${type}`,
+        payload: data,
+      });
     });
-  };
+  }
 
-  const checkNumber = (rule, value, callback) => {
+  function checkNumber(rule, value, callback) {
     if (!/^[\d]{1,2}$/.test(value)) {
       callback(new Error('年龄不合法'));
     } else {
       callback();
     }
-  };
+  }
 
-  const getFieldPropsBy = (key, message, validator) => {
+  function getFieldPropsBy(key, message, validator) {
     const rules = [{
       required: true,
       message,
       validator,
     }];
     return getFieldProps(key, { rules, initialValue: item[key] || '', });
-  };
+  }
 
   const modalOpts = {
     title: '修改用户',
     visible,
     onOk: handleOk,
-    onCancel,
+    onCancel: handleCancel,
   };
 
   return (
