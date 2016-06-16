@@ -89,15 +89,12 @@ function* _update({ payload }) {
 function* watchGet() {
   yield takeLatest('users/query', _query);
 }
-
 function* watchDelete() {
   yield takeLatest('users/delete', _delete);
 }
-
 function* watchCreate() {
   yield takeLatest('users/create', _create);
 }
-
 function* watchUpdate() {
   yield takeLatest('users/update', _update);
 }

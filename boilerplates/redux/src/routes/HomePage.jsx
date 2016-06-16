@@ -1,8 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+import styles from './HomePage.less';
 
 function HomePage() {
   return (
-    <div>Hello Antd.</div>
+    <div className={styles.normal}>
+      <h1>Hello Antd.</h1>
+      <hr />
+      <ul className={styles.list}>
+        <li>You can go to <Link to="/users">/users</Link></li>
+      </ul>
+    </div>
   );
 }
 
