@@ -72,7 +72,7 @@ render();
 SagaManager.startSagas(sagaMiddleware);
 
 hashHistory.listen(location => {
-  if (location.action === 'POP') {
+  if (location.action === 'POP' && location.pathname === '/users') {
     store.dispatch({
       type: 'users/query',
       payload: location.query,
