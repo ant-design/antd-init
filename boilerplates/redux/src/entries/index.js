@@ -35,10 +35,11 @@ if (module.hot) {
   });
 }
 
+const history = syncHistoryWithStore(hashHistory, store);
+SagaManager.startSagas(sagaMiddleware);
+
 //////////////////////
 // Render
-
-const history = syncHistoryWithStore(hashHistory, store);
 
 let render = () => {
   const Routes = require('../routes/index');
@@ -71,9 +72,7 @@ if (module.hot) {
 render();
 
 //////////////////////
-// Init
-
-SagaManager.startSagas(sagaMiddleware);
+// Track history
 
 hashHistory.listen(location => {
   if (location.action === 'POP' && location.pathname === '/users') {
