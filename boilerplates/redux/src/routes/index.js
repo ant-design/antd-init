@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
 import { Router, Route, IndexRoute, Link } from 'react-router';
-import App from '../components/App';
-import NotFound from '../components/NotFound';
+import HomePage from './HomePage';
+import NotFound from './NotFound';
+import Users from './Users';
 
-const Routes = ({ history }) =>
-  <Router history={history}>
-    <Route path="/" component={App} />
-    <Route path="/actived" component={App} />
-    <Route path="/completed" component={App} />
-    <Route path="*" component={NotFound}/>
-  </Router>;
+function Routes({ history }) {
+  return (
+    <Router history={history}>
+      <Route path="/" component={HomePage} />
+      <Route path="/users" component={Users} />
+      <Route path="*" component={NotFound} />
+    </Router>
+  );
+}
 
 Routes.propTypes = {
   history: PropTypes.any,

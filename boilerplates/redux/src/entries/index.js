@@ -22,7 +22,6 @@ const enhancer = compose(
 const store = createStore(combineReducers({
   ...reducers, routing,
 }), initialState, enhancer);
-SagaManager.startSagas(sagaMiddleware);
 
 if (module.hot) {
   module.hot.accept('../reducers', () => {
@@ -36,10 +35,11 @@ if (module.hot) {
   });
 }
 
+const history = syncHistoryWithStore(hashHistory, store);
+SagaManager.startSagas(sagaMiddleware);
+
 //////////////////////
 // Render
-
-const history = syncHistoryWithStore(hashHistory, store);
 
 let render = () => {
   const Routes = require('../routes/index');
@@ -70,3 +70,15 @@ if (module.hot) {
 }
 
 render();
+
+//////////////////////
+// Track history
+
+hashHistory.listen(location => {
+  if (location.action === 'POP' && location.pathname === '/users') {
+    store.dispatch({
+      type: 'users/query',
+      payload: location.query,
+    });
+  }
+});
