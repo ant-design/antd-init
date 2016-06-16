@@ -71,11 +71,11 @@ if (module.hot) {
 render();
 SagaManager.startSagas(sagaMiddleware);
 
-//hashHistory.listen(location => {
-//  if (location.action === 'POP') {
-//    store.dispatch({
-//      type: 'users/query',
-//      payload: location.query,
-//    });
-//  }
-//});
+hashHistory.listen(location => {
+  if (location.action === 'POP') {
+    store.dispatch({
+      type: 'users/query',
+      payload: location.query,
+    });
+  }
+});
