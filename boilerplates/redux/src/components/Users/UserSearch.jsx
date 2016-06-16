@@ -3,7 +3,6 @@ import { Form, Input, Button, Select } from 'antd';
 import styles from './UserSearch.less';
 
 function UserSearch({ dispatch, form, field, keyword }) {
-
   const { getFieldProps, validateFields, getFieldsValue } = form;
 
   function handleSubmit(e) {
@@ -38,7 +37,7 @@ function UserSearch({ dispatch, form, field, keyword }) {
   return (
     <div className={styles.normal}>
       <div className={styles.search}>
-        <Form inline onSubmit={ handleSubmit } form={form}>
+        <Form inline onSubmit={handleSubmit} form={form}>
           <Form.Item>
             <Select { ...getFieldProps('field', { initialValue: field || 'name' }) }>
               <Select.Option value="name">名字</Select.Option>
@@ -49,7 +48,12 @@ function UserSearch({ dispatch, form, field, keyword }) {
           <Form.Item
             hasFeedback
           >
-            <Input { ...getFieldProps('keyword', { initialValue: keyword || '', rules: keywordRules }) } />
+            <Input
+              { ...getFieldProps('keyword', {
+                initialValue: keyword || '',
+                rules: keywordRules,
+              }) }
+            />
           </Form.Item>
           <Button style={{ marginRight: '10px' }} type="primary" htmlType="submit">搜索</Button>
         </Form>

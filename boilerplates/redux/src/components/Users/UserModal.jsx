@@ -48,7 +48,7 @@ function UserModal({ dispatch, visible, form, item = {}, type }) {
       message,
       validator,
     }];
-    return getFieldProps(key, { rules, initialValue: item[key] || '', });
+    return getFieldProps(key, { rules, initialValue: item[key] || '' });
   }
 
   const modalOpts = {
@@ -60,7 +60,7 @@ function UserModal({ dispatch, visible, form, item = {}, type }) {
 
   return (
     <Modal { ...modalOpts }>
-      <Form horizontal form={ form }>
+      <Form horizontal form={form}>
         <FormItem
           label="姓名："
           hasFeedback

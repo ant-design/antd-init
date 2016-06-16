@@ -32,7 +32,7 @@ function* _query({ payload, initial }) {
         },
       });
     }
-  } catch(err) {
+  } catch (err) {
     message.error(err);
   }
 }

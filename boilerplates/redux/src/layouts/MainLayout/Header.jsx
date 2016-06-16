@@ -13,7 +13,7 @@ function getMenuKeyFromUrl(pathname) {
 function Header({ location }) {
   return (
     <Menu
-      selectedKeys={ [getMenuKeyFromUrl(location.pathname)] }
+      selectedKeys={[getMenuKeyFromUrl(location.pathname)]}
       mode="horizontal"
       theme="dark"
     >

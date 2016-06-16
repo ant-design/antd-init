@@ -18,10 +18,10 @@ function Users({ location, dispatch, users }) {
   // 如果你使用了redux, 请移步 http://react-component.github.io/form/examples/redux.html
   const UserModalGen = () => {
     return <UserModal
-      dispatch={ dispatch }
-      item={ currentItem }
-      visible={ modalVisible }
-      type={ modalType }
+      dispatch={dispatch}
+      item={currentItem}
+      visible={modalVisible}
+      type={modalType}
     />
   };
 
@@ -29,16 +29,16 @@ function Users({ location, dispatch, users }) {
     <MainLayout location={location}>
       <div className={styles.normal}>
         <UserSearch
-          dispatch={ dispatch }
-          field={ field }
-          keyword={ keyword }
+          dispatch={dispatch}
+          field={field}
+          keyword={keyword}
         />
         <UserList
-          dispatch={ dispatch }
-          dataSource={ list }
-          loading={ loading }
-          total={ total }
-          current={ current }
+          dispatch={dispatch}
+          dataSource={list}
+          loading={loading}
+          total={total}
+          current={current}
         />
         <UserModalGen />
       </div>

@@ -5,16 +5,15 @@ const sagas = [rootSaga];
 
 export const CANCEL_SAGAS_HMR = 'CANCEL_SAGAS_HMR';
 
-function createAbortableSaga (saga) {
+function createAbortableSaga(saga) {
   if (process.env.NODE_ENV === 'development') {
-    return function* main () {
+    return function* main() {
       const sagaTask = yield fork(saga);
       yield take(CANCEL_SAGAS_HMR);
       yield cancel(sagaTask);
     };
-  } else {
-    return saga;
   }
+  return saga;
 }
 
 const SagaManager = {
@@ -23,9 +22,9 @@ const SagaManager = {
   },
   cancelSagas(store) {
     store.dispatch({
-      type: CANCEL_SAGAS_HMR
+      type: CANCEL_SAGAS_HMR,
     });
-  }
+  },
 };
 
 export default SagaManager;
