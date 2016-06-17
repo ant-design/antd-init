@@ -4,19 +4,61 @@ var vfs = require('vinyl-fs');
 var fs = require('fs');
 var through = require('through2');
 var path = require('path');
-var inquirer = require('inquirer');
 var join = path.join;
 var basename = path.basename;
+var argv = process.argv;
+var simplifyFilename = require('../lib/util').simplifyFilename;
 
-if (process.argv.length === 3 &&
-  (process.argv[2] === '-v' || process.argv[2] === '--version')) {
+function printHelpInfo() {
+  console.log('antd-init v' + require('../package').version);
+  console.log();
+  console.log('Commands:');
+  console.log();
+  console.log('antd-init -v');
+  console.log('antd-init -h');
+  console.log('antd-init');
+  printGenerateInfo();
+}
+
+function printGenerateInfo() {
+  console.log('antd-init generate route users');
+  console.log('antd-init generate component UserList');
+  console.log('antd-init generate component UserList/UserItem');
+  console.log('antd-init generate saga users');
+  console.log('antd-init generate reducer users');
+  console.log('antd-init generate service users');
+}
+
+if (argv.length === 3 && ['-v', '--version'].indexOf(argv[2]) > -1) {
   console.log(require('../package').version);
   return;
 }
 
-if (process.argv[2] === '--demo') {
+if (argv.length === 3 && ['-h', '--help', 'help'].indexOf(argv[2]) > -1) {
+  printHelpInfo();
+}
+
+// antd-init g route user
+if (['g', 'generate'].indexOf(argv[2]) > -1) {
+  if (argv.length !== 5) {
+    console.error('generate error');
+    console.log('examples: ');
+    printGenerateInfo();
+    return;
+  }
+  require('../lib/generate')(argv[3], argv[4]);
+  return;
+}
+
+// antd-init -d
+// antd-init --demo
+if (argv.length === 3 && ['--demo'].indexOf(argv[2]) > -1) {
   init('demo');
-} else {
+  return;
+}
+
+// antd-init
+if (argv.length === 2) {
   init('redux');
 }
 
@@ -44,8 +86,4 @@ function template(dest) {
     this.push(file);
     cb();
   });
-}
-
-function simplifyFilename(filename) {
-  return filename.replace(process.cwd(), ".");
 }
