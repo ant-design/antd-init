@@ -1,5 +1,5 @@
 import xFetch from './xFetch';
 
-export async function __FUNC_NAME__() {
+export async function query() {
   return xFetch('/api/path');
 }
