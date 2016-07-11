@@ -10,7 +10,9 @@ A boilerplate with react, redux, redux-saga, react-router, webpack, babel, css-m
 $ npm install
 ```
 
-想要更好的开发体验，还需安装两个 Chrome 插件：[Redux DevTools](https://chrome.google.com/webstore/detail/lmhkpmbekcpmknklioeibfkpmmfibljd) 和 [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) 。
+想要更好的开发体验，还需安装一个 Chrome 插件：[Redux DevTools](https://chrome.google.com/webstore/detail/lmhkpmbekcpmknklioeibfkpmmfibljd) 
+
+脚手架内自带了 Livereload 的功能，当发现不可用时可以提交 [issue](https://github.com/dora-js/dora-plugin-livereload/issues)，也可以安装 Chrome 插件：[LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) 。
 
 ## 启动调试
 
@@ -71,7 +73,7 @@ $ npm run build -- --no-compress
 
 > 基于 [Webpack Vanilla HMR](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html)，支持 `components`, `reducers`, `routers`, `sagas`, `layouts` 目录的模块热替换，其余目录的修改则会自动刷新页面。
 
-> CSS 的自动刷新需通过 [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) Chrome 插件配合使用。
+> CSS 的自动刷新需通过 [dora-plugin-livereload](https://github.com/dora-js/dora-plugin-livereload/)
 
 > - [Why Vanilla HMR](https://github.com/reactjs/redux/pull/1455)
 
