@@ -18,7 +18,7 @@ $ npm start
 
 #### package.json
 
-- 配置在 `package.json` 下的 `theme` 字段。（需要使用 antd-init）
+- 配置在 `package.json` 下的 `theme` 字段。 theme 可以为字符串: https://github.com/ant-tool/atool-build/issues/176
 
 #### webpack.config.js
 
