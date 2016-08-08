@@ -16,8 +16,10 @@
     "test": "mocha --no-timeouts"
   },
   "dependencies": {
-    "inquirer": "^1.0.0",
+    "fs-extra": "^0.30.0",
+    "left-pad": "^1.1.0",
     "through2": "2.0.x",
+    "uppercamelcase": "^1.1.0",
     "vinyl-fs": "^2.4.3",
     "which": "1.2.x"
   },

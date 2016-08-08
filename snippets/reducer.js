@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 
 const __reducer_name__ = handleActions({
-  ['action/type'](state, action) {
+  ['__reducer_name__/action'](state, action) {
     return { ...state };
   },
 }, {

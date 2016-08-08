@@ -66,8 +66,6 @@ function UserSearch({ dispatch, form, field, keyword }) {
 }
 
 UserSearch.propTypes = {
-  onShowCreateModal: PropTypes.func.isRequired,
-  onSearch: PropTypes.func.isRequired,
   form: PropTypes.object.isRequired,
 };
 

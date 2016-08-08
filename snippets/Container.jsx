@@ -5,7 +5,7 @@ import styles from './__COMPONENT_NAME__.less';
 function __COMPONENT_NAME__(props) {
   return (
     <div className={styles.normal}>
-      __COMPONMENT_NAME__
+      __COMPONENT_NAME__
     </div>
   );
 }
