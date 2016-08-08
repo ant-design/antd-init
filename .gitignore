@@ -5,3 +5,15 @@ node_modules
 examples/**/dist
 boilerplate/dist
 *.log
+
+
+boilerplates/MobileDemo/ios/build
+boilerplates/MobileDemo/ios/bundle
+boilerplates/MobileDemo/android/bundle
+boilerplates/MobileDemo/android/.gradle
+boilerplates/MobileDemo/android/app/build
+boilerplates/MobileDemo/android/build
+boilerplates/MobileDemo/android/local.properties
+boilerplates/MobileDemo/android/app/src/main/assets
+boilerplates/MobileDemo/android/app/src/main/res/drawable*
+xcuserdata
