@@ -14,11 +14,7 @@ if (process.argv.length === 3 &&
   return;
 }
 
-if (process.argv[2] === '--demo') {
-  init('demo');
-} else {
-  init('redux');
-}
+init('demo');
 
 function init(type) {
   var cwd = join(__dirname, '../boilerplates', type);
