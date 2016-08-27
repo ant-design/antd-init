@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.less';
+import './index.css';
 import { DatePicker } from 'antd';
 
 function App() {

@@ -17,7 +17,6 @@
     "babel-runtime": "^6.9.2",
     "dora": "0.3.x",
     "dora-plugin-webpack": "0.8.1",
-    "es3ify-loader": "^0.2.0",
     "eslint": "^2.12.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
