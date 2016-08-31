@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "antd": "^1.1.0",
-    "atool-build": "0.7.x",
+    "atool-build": "0.8.x",
     "babel-plugin-antd": "~0.4.0",
     "babel-plugin-transform-runtime": "^6.8.0",
     "babel-runtime": "^6.6.1",
@@ -26,9 +26,7 @@
     "glob": "^7.0.3",
     "pre-commit": "1.x"
   },
-  "theme": {
-    "primary-color": "#1DA57A"
-  },
+  "theme": "./theme.js",
   "pre-commit": [
     "lint"
   ],
