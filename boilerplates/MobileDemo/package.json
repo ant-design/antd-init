@@ -25,10 +25,11 @@
     "eslint-plugin-jsx-a11y": "^1.4.2",
     "eslint-plugin-react": "^5.1.1",
     "expect": "^1.20.1",
-    "pre-commit": "1.x"
+    "pre-commit": "1.x",
+    "postcss-pxtorem": "^3.3.1"
   },
   "dependencies": {
-    "antd-mobile": "0.7.x",
+    "antd-mobile": "0.8.x",
     "babel-runtime": "6.x",
     "rc-form": "~0.17.2",
     "react": "15.2.1",
