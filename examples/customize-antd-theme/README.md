@@ -1,6 +1,8 @@
 # 修改 Ant Design 的主色系
 
-> 适用于 `antd@1.x`。
+> 适用于 `antd@1+`。
+
+所有样式变量可以在 https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less 里找到。
 
 ----
 
