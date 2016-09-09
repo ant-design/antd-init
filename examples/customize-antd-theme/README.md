@@ -23,7 +23,9 @@ $ npm start
 
 配置在 `package.json` 下的 `theme` 字段。theme 可以为配置为文件路径: https://github.com/ant-tool/atool-build/issues/176 。
 
-需要配合 antd-init 使用。
+需要配合 antd-init 和 atool-build 使用，如果你没有使用，可以参考 [tool-build 的 less-loader 相关配置 ](https://github.com/ant-tool/atool-build/blob/a4b3e3eec4ffc09b0e2352d7f9d279c4c28fdb99/src/getWebpackCommonConfig.js#L131-L138)，利用 `modifyVars` 覆盖原来的样式变量。
+
+> 注意，样式必须加载 less 。保持 `babel-plugin-antd` 的 style 属性配置为 `true` 或 `less`。
 
 ### 2) less
 
@@ -38,4 +40,4 @@ $ npm start
    @import "~antd/lib/style/components.less";
    ```
 
-注意：这种方式会载入所有组件的样式，无法和 babel-plugin-antd 的 style 属性一起使用。
+> 注意：这种方式的缺点会载入所有组件的样式，无法和按需加载插件 `babel-plugin-antd` 的 `style` 属性一起使用。
