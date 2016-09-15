@@ -58,9 +58,9 @@ Lint.
 $ npm run lint
 ```
 
-## Don't work in IE8 ?
+## Compatibility in IE8 ?
 
-Since IE8 is don't supported in main react community, you should do follow steps to make it work: 
+Since IE8 is no longer supported by the main react community, you could do the following steps to make it work:
 
 1. Open `package.json`
   
