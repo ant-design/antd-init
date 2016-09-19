@@ -1,4 +1,4 @@
-# 修改 Ant Design 的主色系
+# 修改 Ant Design 的样式变量
 
 > 适用于 `antd@1+`。
 
