@@ -9,8 +9,8 @@
     "react-dom": "^15.1.0"
   },
   "devDependencies": {
-    "atool-test-mocha": "^0.1.4",
     "atool-build": "^0.8.0",
+    "atool-test-mocha": "^0.1.4",
     "babel-eslint": "^6.0.2",
     "babel-plugin-antd": "^0.5.1",
     "babel-plugin-transform-runtime": "^6.8.0",
