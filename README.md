@@ -2,18 +2,12 @@
 
 [![NPM version](https://img.shields.io/npm/v/antd-init.svg?style=flat)](https://npmjs.org/package/antd-init)
 
-[Ant Design](https://github.com/ant-design/ant-design) boilerplate generator.
+[Ant Design](https://github.com/ant-design/ant-design) demo tool.
 
 ----
 
-## Feature
-
-- Generate a webpack workflow based boilerplate.
-- support ES2015 and less.
-- Local development via [dora](https://github.com/dora-js/dora), support proxy, HMR and unit test.
-- support custom webpack.config，[examples](./boilerplate/redux/webpack.config.js).
-
-More usage: http://ant-tool.github.io/
+## antd-init@2 is for demo only. If you want to create projects, it's better to init with [dva-cli](https://github.com/dvajs/dva-cli). [dva](https://github.com/dvajs/dva) is a redux and react based application framework. elm concept, support side effects, hmr, dynamic load and so on.
+## antd-init@2 仅适用于 demo，如果你要开发项目，推荐使用 [dva-cli](https://github.com/dvajs/dva-cli) 进行项目初始化。[dva](https://github.com/dvajs/dva) 是一个基于 react 和 redux 的轻量应用框架，概念来自 elm，支持 side effects、热替换、动态加载等，已在生产环境广泛应用。
 
 ## Install
 
@@ -23,15 +17,11 @@ $ npm i antd-init -g
 
 ## Usage
 
-Generate boilerplate.
+Generate demo boilerplate.
 
 ```bash
 $ mkdir foo && cd foo
 $ antd-init
-
-// or with specify type
-$ antd-init --type plain-react
-$ antd-init --type redux
 ```
 
 Start development server.
@@ -45,54 +35,3 @@ Build.
 ```bash
 $ npm run build
 ```
-
-Test.
-
-```bash
-$ npm test
-```
-
-Lint.
-
-```bash
-$ npm run lint
-```
-
-## Don't work in IE8 ?
-
-Since IE8 is don't supported in main react community, you should do follow steps to make it work: 
-
-1. Open `package.json`
-  
-  Modify dependency version.
-  
-  ```diff
-  - "react": "^15.0.2",
-  - "react-dom": "^15.0.2",
-  - "react-router": "^2.0.1",
-  + "react": "0.14.x",
-  + "react-dom": "0.14.x",
-  + "react-router": "2.3.x"
-  ```
-  
-  Remove hmr plugin.
-  
-  ```diff
-  - "start": "dora -p 8001 --plugins   \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
-  + "start": "dora -p 8001 --plugins   \"webpack,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
-  ```
-
-2. Open `webpack.config.js`, and enable es3ify-loader
-
-  ```diff
-  // Enable this if you have to support IE8.
-  - // webpackConfig.module.loaders.unshift({
-  - //   test: /\.jsx?$/,
-  - //   loader: 'es3ify-loader',
-  - // });
-  + webpackConfig.module.loaders.unshift({
-  +   test: /\.jsx?$/,
-  +   loader: 'es3ify-loader',
-  + });
-  ```
-
