@@ -15,7 +15,7 @@
     "babel-plugin-import": "^1.0.1",
     "babel-plugin-transform-runtime": "^6.8.0",
     "babel-runtime": "^6.9.2",
-    "dora": "0.3.x",
+    "dora": "0.4.x",
     "dora-plugin-webpack": "0.8.1",
     "eslint": "^2.12.0",
     "eslint-config-airbnb": "^9.0.1",
