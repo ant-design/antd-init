@@ -4,7 +4,7 @@
   ],
   "plugins": [
     [
-      "antd",
+      "import",
       {
         "libraryName": "antd-mobile"
       }

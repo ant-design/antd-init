@@ -8,19 +8,17 @@ let MobileDemo = React.createClass({
   render() {
     return (<View style={{ marginTop: 20 }}>
       <List>
-        <List.Body>
-          <DatePicker
-            mode="datetime"
-            {...this.props.form.getFieldProps('datetime')}
+        <DatePicker
+          mode="datetime"
+          {...this.props.form.getFieldProps('datetime')}
+        >
+          <List.Item
+            arrow="horizontal"
+            last
           >
-            <List.Item
-              arrow="horizontal"
-              last
-            >
-              选择时间
-            </List.Item>
-          </DatePicker>
-        </List.Body>
+            选择时间
+          </List.Item>
+        </DatePicker>
       </List>
     </View>);
   }
