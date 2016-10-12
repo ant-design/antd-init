@@ -2,6 +2,8 @@
 
 ### environment
 
+- node 4.x
+- npm3
 
 ````
 npm i npm@3 -g
