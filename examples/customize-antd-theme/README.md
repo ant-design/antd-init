@@ -17,7 +17,7 @@ $ npm start
 
 ## 颜色配置方式
 
-有 `package.theme` 和 `less` 种方方案，选择一种即可。
+有 `package.theme` 和 `less` 种方案，选择一种即可。
 
 ### 1) package.theme（推荐）
 
