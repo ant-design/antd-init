@@ -21,9 +21,17 @@ $ npm start
 
 ### 1) package.theme（推荐）
 
-配置在 `package.json` 下的 `theme` 字段。theme 可以为配置为文件路径: https://github.com/ant-tool/atool-build/issues/176 。
+配置在 `package.json` 下的 `theme` 字段。theme 可以为配置为对象或文件路径。
 
-需要配合 antd-init 和 atool-build 使用。如果你使用的是其他脚手架，可以参考 [atool-build 中 less-loader 的 webpack 相关配置 ](https://github.com/ant-tool/atool-build/blob/a4b3e3eec4ffc09b0e2352d7f9d279c4c28fdb99/src/getWebpackCommonConfig.js#L131-L138)，利用 `modifyVars` 配置覆盖原来的样式变量。
+```js
+"theme": {
+  "@primary-color": "#1088ae",
+},
+// 或
+"theme": "./theme.js",
+```
+
+需要配合 atool-build 使用（antd-init 和 dva-cli 均支持）。如果你使用的是其他脚手架，可以参考 [atool-build 中 less-loader 的 webpack 相关配置 ](https://github.com/ant-tool/atool-build/blob/a4b3e3eec4ffc09b0e2352d7f9d279c4c28fdb99/src/getWebpackCommonConfig.js#L131-L138)，利用 `modifyVars` 配置覆盖原来的样式变量。
 
 > 注意，样式必须加载 less 。保持 `babel-plugin-import` 的 style 属性配置为 `true` 或 `less`。
 
