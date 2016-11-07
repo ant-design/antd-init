@@ -11,14 +11,14 @@
     "start": "dora --plugins \"proxy,webpack,livereload?enableJs=false&injectHost=127.0.0.1\""
   },
   "devDependencies": {
-    "atool-build": "^0.8.0",
+    "atool-build": "^0.9.0",
     "babel-eslint": "^6.0.2",
     "babel-plugin-import": "~1.0.1",
     "babel-plugin-transform-runtime": "^6.8.0",
-    "dora": "0.3.x",
+    "dora": "0.4.x",
     "dora-plugin-livereload": "^0.5.0",
-    "dora-plugin-proxy": "^0.7.0",
-    "dora-plugin-webpack": "0.6.x",
+    "dora-plugin-proxy": "^0.8.5",
+    "dora-plugin-webpack": "^0.8.1",
     "eslint": "^2.12.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
@@ -38,5 +38,6 @@
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "theme": "./theme.js"
 }

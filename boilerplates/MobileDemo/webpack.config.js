@@ -7,7 +7,7 @@ const pxtorem = require('postcss-pxtorem');
 module.exports = function (webpackConfig) {
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['import', {
-    style: 'css',  // if true, use less
+    style: true,  // if true, use less
     libraryName: 'antd-mobile',
   }]);
   webpackConfig.postcss.push(pxtorem({
