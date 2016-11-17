@@ -1,6 +1,6 @@
 # 修改 Ant Design 的样式变量
 
-> 适用于 `antd@1+`。
+> 适用于 `antd@>=1.0.0`。
 
 所有样式变量可以在 https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less 里找到。
 
