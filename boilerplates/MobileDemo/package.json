@@ -15,6 +15,7 @@
     "babel-eslint": "^6.0.2",
     "babel-plugin-import": "~1.0.1",
     "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-react-native": "^1.9.0",
     "dora": "0.4.x",
     "dora-plugin-livereload": "^0.5.0",
     "dora-plugin-proxy": "^0.8.5",
