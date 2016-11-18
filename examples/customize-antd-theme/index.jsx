@@ -23,42 +23,37 @@ const Demo = React.createClass({
     return (
       <Form horizontal>
         <FormItem
-          label="InputNumber 数字输入框："
+          label="数字输入框"
           labelCol={{ span: 8 }}
-          wrapperCol={{ span: 10 }}>
+          wrapperCol={{ span: 8 }}
+        >
           <InputNumber size="large" min={1} max={10} style={{width:100}} defaultValue={3} name="inputNumber" />
           <span className="ant-form-text"> 台机器</span>
+          <a href="#">链接文字</a>
         </FormItem>
 
         <FormItem
-          label="我是标题："
+          label="开关"
           labelCol={{ span: 8 }}
-          wrapperCol={{ span: 10 }}>
-          <p className="ant-form-text" id="static" name="static">唧唧复唧唧木兰当户织呀</p>
-          <p className="ant-form-text">
-            <a href="#">链接文字</a>
-          </p>
+          wrapperCol={{ span: 8 }}
+        >
+          <Switch defaultChecked name="switch" />
         </FormItem>
 
         <FormItem
-          label="Switch 开关："
+          label="滑动输入条"
           labelCol={{ span: 8 }}
-          wrapperCol={{ span: 10 }}>
-          <Switch name="switch" />
+          wrapperCol={{ span: 8 }}
+        >
+          <Slider defaultValue={70} />
         </FormItem>
 
         <FormItem
-          label="Slider 滑动输入条："
+          label="选择器"
           labelCol={{ span: 8 }}
-          wrapperCol={{ span: 10 }}>
-          <Slider marks={['A', 'B', 'C', 'D', 'E', 'F', 'G']} name="slider" />
-        </FormItem>
-
-        <FormItem
-          label="Select 选择器："
-          labelCol={{ span: 8 }}
-          wrapperCol={{span: 16}}>
-          <Select size="large" defaultValue="lucy" style={{width:200}} name="select">
+          wrapperCol={{ span: 8 }}
+        >
+          <Select size="large" defaultValue="lucy" style={{ width: 192 }} name="select">
             <Option value="jack">jack</Option>
             <Option value="lucy">lucy</Option>
             <Option value="disabled" disabled>disabled</Option>
@@ -67,15 +62,23 @@ const Demo = React.createClass({
         </FormItem>
 
         <FormItem
-          label="DatePicker 日期选择框："
-          labelCol={{ span: 8 }}>
+          label="日期选择框"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 8 }}
+        >
           <DatePicker name="startDate" />
         </FormItem>
-        <Row>
-          <Col span="16" offset="8">
-            <Button type="primary" htmlType="submit">确定</Button>
-          </Col>
-        </Row>
+        <FormItem
+          style={{ marginTop: 48 }}
+          wrapperCol={{ span: 8, offset: 8 }}
+        >
+          <Button size="large" type="primary" htmlType="submit">
+            确定
+          </Button>
+          <Button size="large" style={{ marginLeft: 8 }}>
+            取消
+          </Button>
+        </FormItem>
       </Form>
     );
   }

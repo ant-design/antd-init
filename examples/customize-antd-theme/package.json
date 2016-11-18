@@ -1,38 +1,39 @@
 {
+  "private": true,
   "entry": {
     "index": "./index.jsx"
   },
   "dependencies": {
-    "antd": "^1.1.0",
-    "atool-build": "0.8.x",
-    "babel-plugin-antd": "~0.4.0",
-    "babel-plugin-transform-runtime": "^6.8.0",
-    "babel-runtime": "^6.6.1",
-    "es3ify-loader": "^0.2.0",
-    "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "antd": "^2.1.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.0",
-    "dora": "0.3.x",
-    "dora-plugin-browser-history": "^0.1.1",
-    "dora-plugin-hmr": "0.6.x",
-    "dora-plugin-livereload": "0.3.x",
-    "dora-plugin-proxy": "0.6.x",
-    "dora-plugin-webpack": "0.6.x",
-    "eslint": "2.x",
-    "eslint-config-airbnb": "6.x",
-    "eslint-plugin-react": "4.x",
-    "glob": "^7.0.3",
-    "pre-commit": "1.x"
+    "atool-build": "^0.9.0",
+    "atool-test-mocha": "^0.1.4",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-import": "^1.0.1",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-runtime": "^6.9.2",
+    "dora": "0.4.x",
+    "dora-plugin-webpack": "^0.8.1",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "expect": "^1.20.1",
+    "pre-commit": "1.x",
+    "redbox-react": "^1.2.6"
   },
-  "theme": "./theme.js",
   "pre-commit": [
     "lint"
   ],
   "scripts": {
-    "start": "dora -p 8001 --plugins \"webpack,hmr,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
-    "lint": "eslint --ext .js,.jsx src",
-    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}"
-  }
+    "build": "atool-build",
+    "lint": "eslint --ext .js,.jsx src/",
+    "start": "dora --plugins webpack",
+    "test": "atool-test-mocha ./**/__tests__/*-test.js"
+  },
+  "theme": "./theme.js"
 }
