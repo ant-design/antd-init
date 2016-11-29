@@ -1,8 +1,11 @@
 # 修改 Ant Design 的样式变量
 
-> 适用于 `antd@>=1.0.0`。
+> 适用于 `antd@>=1.0.0`/`antd-mobile@>=0.9.0`。
 
-所有样式变量可以在 https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less 里找到。
+所有样式变量可以在 
+[antd](https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less) / 
+[antd-mobile](https://github.com/ant-design/ant-design-mobile/blob/master/components/style/themes/default.less)
+里找到。
 
 ----
 
@@ -17,9 +20,9 @@ $ npm start
 
 ## 颜色配置方式
 
-有 `package.theme` 和 `less` 种方案，选择一种即可。
+有两种方案，选择一种即可。
 
-### 1) package.theme（推荐）
+### 方案一（推荐）
 
 配置在 `package.json` 下的 `theme` 字段。theme 可以为配置为对象或文件路径。
 
@@ -35,15 +38,40 @@ $ npm start
 
 > 注意，样式必须加载 less 。保持 `babel-plugin-import` 的 style 属性配置为 `true` 或 `less`。
 
-### 2) less
+想直接使用正常的 theme.less 文件，可以自己通过类似 [less-vars-to-js](https://www.npmjs.com/package/less-vars-to-js) 
+的工具读取 less 文件变量，再自己设置`modifyVars`即可，示例如下：
 
-样式覆盖。不要引入 `antd/dist/antd.css`，而是改成以下的方式：
+```js
+const lessToJs = require('less-vars-to-js');
+
+const themer = lessToJs(fs.readFileSync(path.join(__dirname, './alipay-theme/theme.less'), 'utf8'));
+webpackConfig.module.loaders.forEach(function(loader) {
+  if (loader.test.toString() === '/\\.less$/') {
+    loader.loader =
+      loader.loader.replace('"modifyVars":{}', '"modifyVars":' + JSON.stringify(themer));
+  }
+});
+```
+
+### 方案二
+
+#### 按需引入自己的组件样式
+
+```css
+@import '~antd-mobile/lib/button/style/index.less';
+@import '~antd-mobile/lib/icon/style/index.less';
+@import "your-theme-file"; // 用于覆盖上面定义的变量
+```
+
+> 当页面只需要引入少量组件时，分别引入相应组件的 less 并用自己的 theme 变量覆盖即可。
+
+#### 一次引入所有组件样式
 
 建立一个单独的 `less` 文件如下，再引入这个文件。
 
-   ```css
-   @import "~antd/dist/antd.less";
-   @import "your-theme-file"; // 用于覆盖上面定义的变量
-   ```
+```css
+@import "~antd/dist/antd.less";
+@import "your-theme-file"; // 用于覆盖上面定义的变量
+```
 
 > 注意：这种方式的缺点会载入所有组件的样式，无法和按需加载插件 `babel-plugin-import` 的 `style` 属性一起使用。
