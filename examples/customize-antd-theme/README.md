@@ -2,8 +2,8 @@
 
 > 适用于 `antd@>=1.0.0`/`antd-mobile@>=0.9.0`。
 
-所有样式变量可以在 
-[antd](https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less) / 
+所有样式变量可以在
+[antd](https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less) /
 [antd-mobile](https://github.com/ant-design/ant-design-mobile/blob/master/components/style/themes/default.less)
 里找到。
 
@@ -36,9 +36,9 @@ $ npm start
 
 需要配合 atool-build 使用（antd-init 和 dva-cli 均支持）。如果你使用的是其他脚手架，可以参考 [atool-build 中 less-loader 的 webpack 相关配置 ](https://github.com/ant-tool/atool-build/blob/a4b3e3eec4ffc09b0e2352d7f9d279c4c28fdb99/src/getWebpackCommonConfig.js#L131-L138)，利用 `modifyVars` 配置覆盖原来的样式变量。
 
-> 注意，样式必须加载 less 。保持 `babel-plugin-import` 的 style 属性配置为 `true` 或 `less`。
+> 注意，样式必须加载 less 。保持 `babel-plugin-import` 的 style 属性配置为 `true`。 
 
-想直接使用正常的 theme.less 文件，可以自己通过类似 [less-vars-to-js](https://www.npmjs.com/package/less-vars-to-js) 
+想直接使用正常的 theme.less 文件，可以自己通过类似 [less-vars-to-js](https://www.npmjs.com/package/less-vars-to-js)
 的工具读取 less 文件变量，再自己设置`modifyVars`即可，示例如下：
 
 ```js
