@@ -10,6 +10,15 @@ module.exports = function (webpackConfig) {
     style: true,  // if true, use less
     libraryName: 'antd-mobile',
   }]);
+  /*
+  webpackConfig.module.loaders = webpackConfig.module.loaders.filter((loader) => {
+    return loader.test.toString().indexOf('.svg') === -1;
+  });
+  webpackConfig.module.loaders.push({
+    test: /\.svg$/,
+    loader: require.resolve('svg-sprite-loader'),
+  });
+  */
   webpackConfig.postcss.push(pxtorem({
     rootValue: 100,
     propWhiteList: [],

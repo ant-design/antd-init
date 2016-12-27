@@ -5,7 +5,7 @@ node_modules
 examples/**/dist
 boilerplate/dist
 *.log
-
+yarn.lock
 
 boilerplates/MobileDemo/ios/build
 boilerplates/MobileDemo/ios/bundle

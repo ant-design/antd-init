@@ -1,4 +1,4 @@
-import { DatePicker, List, Button } from 'antd-mobile';
+import { DatePicker, List, Button, Icon } from 'antd-mobile';
 import { createForm } from 'rc-form';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -18,6 +18,8 @@ let MobileDemo = React.createClass({
         <Button type="primary" style={{ margin: '16px 0', padding: '0 16px' }}>
           按钮
         </Button>
+
+        <Icon type="aliwangwang" />
       </div>
     );
   },
