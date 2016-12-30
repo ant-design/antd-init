@@ -1,5 +1,9 @@
 # 修改 Ant Design 的样式变量
 
+优先阅读官网文档：https://ant.design/docs/react/customize-theme-cn
+
+---
+
 > 适用于 `antd@>=1.0.0`/`antd-mobile@>=0.9.0`。
 
 所有样式变量可以在
