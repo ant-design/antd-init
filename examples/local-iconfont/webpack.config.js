@@ -1,12 +1,6 @@
 module.exports = function(webpackConfig) {
-  webpackConfig.babel.plugins.push('antd');
-
-  // Fix ie8 compatibility
-  webpackConfig.module.loaders.unshift({
-    test: /\.jsx?$/,
-    loader: 'es3ify-loader',
-  });
-
+  webpackConfig.babel.plugins.push(['import', {
+    libraryName: 'antd',
+  }]);
   return webpackConfig;
 };
-
