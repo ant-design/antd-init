@@ -61,18 +61,6 @@ webpackConfig.module.loaders.forEach(function(loader) {
 
 ### 方案二
 
-#### 按需引入自己的组件样式
-
-```css
-@import '~antd-mobile/lib/button/style/index.less';
-@import '~antd-mobile/lib/icon/style/index.less';
-@import "your-theme-file"; // 用于覆盖上面定义的变量
-```
-
-> 当页面只需要引入少量组件时，分别引入相应组件的 less 并用自己的 theme 变量覆盖即可。
-
-#### 一次引入所有组件样式
-
 建立一个单独的 `less` 文件如下，再引入这个文件。
 
 ```css
