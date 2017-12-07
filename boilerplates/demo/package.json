@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "antd": "^2.1.0",
+    "moment": "^2.19.3",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
