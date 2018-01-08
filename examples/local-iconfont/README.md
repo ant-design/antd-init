@@ -13,7 +13,7 @@ $ npm start
 
 然后访问 http://127.0.0.1:8989/。
 
-最新的 iconfont 文件可以到 [此链接](http://ant.design/docs/resource/download) 下载。
+最新的 iconfont 文件可以到 [此链接](https://ant.design/docs/spec/download-cn) 下载。
 
 > 如果使用 `package.theme` 来自定义 iconfont 的路径无效，可以参考[这个解决方案](https://github.com/visvadw/dvajs-user-dashboard/pull/2)。
 
@@ -37,6 +37,6 @@ $ npm start
 
 Then visit http://127.0.0.1:8989/ .
 
-Latest Iconfont files of Ant Design can be downloaded here: http://ant.design/docs/resource/download
+Latest Iconfont files of Ant Design can be downloaded here: https://ant.design/docs/spec/download-cn
 
 > If it is not working when you use `package.theme` way to customize iconfont path, you could check [this solution](https://github.com/visvadw/dvajs-user-dashboard/pull/2).
