@@ -37,6 +37,6 @@ $ npm start
 
 Then visit http://127.0.0.1:8989/ .
 
-Latest Iconfont files of Ant Design can be downloaded here: https://ant.design/docs/spec/download-cn
+Latest Iconfont files of Ant Design can be downloaded here: https://ant.design/docs/spec/download
 
 > If it is not working when you use `package.theme` way to customize iconfont path, you could check [this solution](https://github.com/visvadw/dvajs-user-dashboard/pull/2).
