@@ -1,3 +1,7 @@
+**⚠️⚠️⚠️ antd@3.9.0+ 之后图标采用 svg 实现，不再从远程加载字体图标，本文仅针对之前的版本有效。**
+
+---
+
 # 本地部署 Iconfont
 
 Ant Design 默认的 iconfont 文件托管在 [iconfont.cn](http://iconfont.cn/) 并默认使用平台提供的 alicdn 地址，公网可访问使用。
@@ -20,6 +24,8 @@ $ npm start
 ---
 
 # Local hosted Iconfont
+
+**⚠️⚠️⚠️ We implement Icons by svg After antd@3.9.0+ instead font icon.**
 
 Follow this repo to host iconfont in your local environment.
 
