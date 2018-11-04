@@ -1,6 +1,6 @@
 # 修改 Ant Design 的样式变量
 
-优先阅读官网文档：https://ant.design/docs/react/customize-theme-cn
+本文内容可能过时，优先阅读官网文档：https://ant.design/docs/react/customize-theme-cn
 
 ---
 
